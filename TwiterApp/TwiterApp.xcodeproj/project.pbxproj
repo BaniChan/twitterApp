@@ -8,26 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		3109FB9C299CB0BF00A256CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3109FB9B299CB0BF00A256CE /* AppDelegate.swift */; };
-		3109FB9E299CB0BF00A256CE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3109FB9D299CB0BF00A256CE /* SceneDelegate.swift */; };
-		3109FBA0299CB0BF00A256CE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3109FB9F299CB0BF00A256CE /* ViewController.swift */; };
-		3109FBA3299CB0BF00A256CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3109FBA1299CB0BF00A256CE /* Main.storyboard */; };
 		3109FBA6299CB0BF00A256CE /* TwiterApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3109FBA4299CB0BF00A256CE /* TwiterApp.xcdatamodeld */; };
 		3109FBA8299CB0C000A256CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3109FBA7299CB0C000A256CE /* Assets.xcassets */; };
 		3109FBAB299CB0C000A256CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3109FBA9299CB0C000A256CE /* LaunchScreen.storyboard */; };
 		3109FBB6299CB0C000A256CE /* TwiterAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3109FBB5299CB0C000A256CE /* TwiterAppTests.swift */; };
-		3109FBC0299CB0C000A256CE /* TwiterAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3109FBBF299CB0C000A256CE /* TwiterAppUITests.swift */; };
-		3109FBC2299CB0C000A256CE /* TwiterAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3109FBC1299CB0C000A256CE /* TwiterAppUITestsLaunchTests.swift */; };
+		3109FC1A299CB71900A256CE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3109FC19299CB71900A256CE /* HomeViewController.swift */; };
+		3109FC20299CB78800A256CE /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3109FC1F299CB78800A256CE /* HomeViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		3109FBB2299CB0C000A256CE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3109FB90299CB0BE00A256CE /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 3109FB97299CB0BF00A256CE;
-			remoteInfo = TwiterApp;
-		};
-		3109FBBC299CB0C000A256CE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3109FB90299CB0BE00A256CE /* Project object */;
 			proxyType = 1;
@@ -39,18 +29,14 @@
 /* Begin PBXFileReference section */
 		3109FB98299CB0BF00A256CE /* TwiterApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwiterApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3109FB9B299CB0BF00A256CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3109FB9D299CB0BF00A256CE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3109FB9F299CB0BF00A256CE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		3109FBA2299CB0BF00A256CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3109FBA5299CB0BF00A256CE /* TwiterApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TwiterApp.xcdatamodel; sourceTree = "<group>"; };
 		3109FBA7299CB0C000A256CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3109FBAA299CB0C000A256CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3109FBAC299CB0C000A256CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3109FBB1299CB0C000A256CE /* TwiterAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TwiterAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3109FBB5299CB0C000A256CE /* TwiterAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwiterAppTests.swift; sourceTree = "<group>"; };
-		3109FBBB299CB0C000A256CE /* TwiterAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TwiterAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3109FBBF299CB0C000A256CE /* TwiterAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwiterAppUITests.swift; sourceTree = "<group>"; };
-		3109FBC1299CB0C000A256CE /* TwiterAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwiterAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		3109FC19299CB71900A256CE /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		3109FC1F299CB78800A256CE /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,13 +54,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3109FBB8299CB0C000A256CE /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -83,7 +62,6 @@
 			children = (
 				3109FB9A299CB0BF00A256CE /* TwiterApp */,
 				3109FBB4299CB0C000A256CE /* TwiterAppTests */,
-				3109FBBE299CB0C000A256CE /* TwiterAppUITests */,
 				3109FB99299CB0BF00A256CE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -93,7 +71,6 @@
 			children = (
 				3109FB98299CB0BF00A256CE /* TwiterApp.app */,
 				3109FBB1299CB0C000A256CE /* TwiterAppTests.xctest */,
-				3109FBBB299CB0C000A256CE /* TwiterAppUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -101,14 +78,11 @@
 		3109FB9A299CB0BF00A256CE /* TwiterApp */ = {
 			isa = PBXGroup;
 			children = (
-				3109FB9B299CB0BF00A256CE /* AppDelegate.swift */,
-				3109FB9D299CB0BF00A256CE /* SceneDelegate.swift */,
-				3109FB9F299CB0BF00A256CE /* ViewController.swift */,
-				3109FBA1299CB0BF00A256CE /* Main.storyboard */,
-				3109FBA7299CB0C000A256CE /* Assets.xcassets */,
-				3109FBA9299CB0C000A256CE /* LaunchScreen.storyboard */,
-				3109FBAC299CB0C000A256CE /* Info.plist */,
-				3109FBA4299CB0BF00A256CE /* TwiterApp.xcdatamodeld */,
+				3109FBD0299CB21F00A256CE /* DB */,
+				3109FBD9299CB36300A256CE /* App */,
+				3109FBD8299CB35500A256CE /* Core */,
+				3109FBCE299CB1E200A256CE /* Resource */,
+				3109FBD6299CB28A00A256CE /* Support */,
 			);
 			path = TwiterApp;
 			sourceTree = "<group>";
@@ -121,13 +95,102 @@
 			path = TwiterAppTests;
 			sourceTree = "<group>";
 		};
-		3109FBBE299CB0C000A256CE /* TwiterAppUITests */ = {
+		3109FBCE299CB1E200A256CE /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				3109FBBF299CB0C000A256CE /* TwiterAppUITests.swift */,
-				3109FBC1299CB0C000A256CE /* TwiterAppUITestsLaunchTests.swift */,
+				3109FBCF299CB20200A256CE /* Languages */,
+				3109FBA7299CB0C000A256CE /* Assets.xcassets */,
 			);
-			path = TwiterAppUITests;
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		3109FBCF299CB20200A256CE /* Languages */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Languages;
+			sourceTree = "<group>";
+		};
+		3109FBD0299CB21F00A256CE /* DB */ = {
+			isa = PBXGroup;
+			children = (
+				3109FBA4299CB0BF00A256CE /* TwiterApp.xcdatamodeld */,
+			);
+			path = DB;
+			sourceTree = "<group>";
+		};
+		3109FBD1299CB23500A256CE /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		3109FBD2299CB24000A256CE /* DAO */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DAO;
+			sourceTree = "<group>";
+		};
+		3109FBD3299CB24F00A256CE /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		3109FBD4299CB25900A256CE /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		3109FBD5299CB28300A256CE /* Flow */ = {
+			isa = PBXGroup;
+			children = (
+				3109FBD7299CB29B00A256CE /* Home */,
+			);
+			path = Flow;
+			sourceTree = "<group>";
+		};
+		3109FBD6299CB28A00A256CE /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				3109FB9B299CB0BF00A256CE /* AppDelegate.swift */,
+				3109FBA9299CB0C000A256CE /* LaunchScreen.storyboard */,
+				3109FBAC299CB0C000A256CE /* Info.plist */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		3109FBD7299CB29B00A256CE /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				3109FC19299CB71900A256CE /* HomeViewController.swift */,
+				3109FC1F299CB78800A256CE /* HomeViewController.xib */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		3109FBD8299CB35500A256CE /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				3109FBD1299CB23500A256CE /* Helper */,
+				3109FBD3299CB24F00A256CE /* Service */,
+				3109FBD2299CB24000A256CE /* DAO */,
+				3109FBD4299CB25900A256CE /* Repository */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		3109FBD9299CB36300A256CE /* App */ = {
+			isa = PBXGroup;
+			children = (
+				3109FBD5299CB28300A256CE /* Flow */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,24 +231,6 @@
 			productReference = 3109FBB1299CB0C000A256CE /* TwiterAppTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		3109FBBA299CB0C000A256CE /* TwiterAppUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 3109FBCB299CB0C000A256CE /* Build configuration list for PBXNativeTarget "TwiterAppUITests" */;
-			buildPhases = (
-				3109FBB7299CB0C000A256CE /* Sources */,
-				3109FBB8299CB0C000A256CE /* Frameworks */,
-				3109FBB9299CB0C000A256CE /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				3109FBBD299CB0C000A256CE /* PBXTargetDependency */,
-			);
-			name = TwiterAppUITests;
-			productName = TwiterAppUITests;
-			productReference = 3109FBBB299CB0C000A256CE /* TwiterAppUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -200,10 +245,6 @@
 						CreatedOnToolsVersion = 14.1;
 					};
 					3109FBB0299CB0C000A256CE = {
-						CreatedOnToolsVersion = 14.1;
-						TestTargetID = 3109FB97299CB0BF00A256CE;
-					};
-					3109FBBA299CB0C000A256CE = {
 						CreatedOnToolsVersion = 14.1;
 						TestTargetID = 3109FB97299CB0BF00A256CE;
 					};
@@ -224,7 +265,6 @@
 			targets = (
 				3109FB97299CB0BF00A256CE /* TwiterApp */,
 				3109FBB0299CB0C000A256CE /* TwiterAppTests */,
-				3109FBBA299CB0C000A256CE /* TwiterAppUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -236,18 +276,11 @@
 			files = (
 				3109FBAB299CB0C000A256CE /* LaunchScreen.storyboard in Resources */,
 				3109FBA8299CB0C000A256CE /* Assets.xcassets in Resources */,
-				3109FBA3299CB0BF00A256CE /* Main.storyboard in Resources */,
+				3109FC20299CB78800A256CE /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		3109FBAF299CB0C000A256CE /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3109FBB9299CB0C000A256CE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -261,10 +294,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3109FBA0299CB0BF00A256CE /* ViewController.swift in Sources */,
 				3109FB9C299CB0BF00A256CE /* AppDelegate.swift in Sources */,
 				3109FBA6299CB0BF00A256CE /* TwiterApp.xcdatamodeld in Sources */,
-				3109FB9E299CB0BF00A256CE /* SceneDelegate.swift in Sources */,
+				3109FC1A299CB71900A256CE /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,15 +308,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3109FBB7299CB0C000A256CE /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3109FBC0299CB0C000A256CE /* TwiterAppUITests.swift in Sources */,
-				3109FBC2299CB0C000A256CE /* TwiterAppUITestsLaunchTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -293,22 +316,9 @@
 			target = 3109FB97299CB0BF00A256CE /* TwiterApp */;
 			targetProxy = 3109FBB2299CB0C000A256CE /* PBXContainerItemProxy */;
 		};
-		3109FBBD299CB0C000A256CE /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 3109FB97299CB0BF00A256CE /* TwiterApp */;
-			targetProxy = 3109FBBC299CB0C000A256CE /* PBXContainerItemProxy */;
-		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		3109FBA1299CB0BF00A256CE /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3109FBA2299CB0BF00A256CE /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		3109FBA9299CB0C000A256CE /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -443,12 +453,11 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 88XQS9H672;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TwiterApp/Info.plist;
+				INFOPLIST_FILE = TwiterApp/Support/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -456,9 +465,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = org.bani.TwiterApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -471,12 +483,11 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 88XQS9H672;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TwiterApp/Info.plist;
+				INFOPLIST_FILE = TwiterApp/Support/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -484,9 +495,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = org.bani.TwiterApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -503,9 +517,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = org.bani.TwiterAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TwiterApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TwiterApp";
 			};
 			name = Debug;
@@ -523,46 +540,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = org.bani.TwiterAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TwiterApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TwiterApp";
-			};
-			name = Release;
-		};
-		3109FBCC299CB0C000A256CE /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 88XQS9H672;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = org.bani.TwiterAppUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = TwiterApp;
-			};
-			name = Debug;
-		};
-		3109FBCD299CB0C000A256CE /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 88XQS9H672;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = org.bani.TwiterAppUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = TwiterApp;
 			};
 			name = Release;
 		};
@@ -592,15 +576,6 @@
 			buildConfigurations = (
 				3109FBC9299CB0C000A256CE /* Debug */,
 				3109FBCA299CB0C000A256CE /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		3109FBCB299CB0C000A256CE /* Build configuration list for PBXNativeTarget "TwiterAppUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				3109FBCC299CB0C000A256CE /* Debug */,
-				3109FBCD299CB0C000A256CE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
