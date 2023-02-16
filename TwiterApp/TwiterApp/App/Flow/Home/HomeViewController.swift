@@ -6,12 +6,15 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        let handle = Auth.auth().addStateDidChangeListener { auth, user in
+          print("\(auth) \(user)")
+        }
     }
 
 
