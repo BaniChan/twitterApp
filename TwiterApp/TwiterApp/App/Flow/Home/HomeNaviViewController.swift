@@ -1,5 +1,5 @@
 //
-//  HomeViewController.swift
+//  HomeNaviViewController.swift
 //  TwiterApp
 //
 //  Created by Bani Chan on 2023/2/15.
@@ -9,8 +9,8 @@ import UIKit
 import FirebaseAuth
 import Resolver
 
-class HomeViewController: UINavigationController, HomeViewModelDelegate {
-    let viewModel = HomeViewModel()
+class HomeNaviViewController: UINavigationController, HomeNaviViewModelDelegate {
+    let viewModel = HomeNaviViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()

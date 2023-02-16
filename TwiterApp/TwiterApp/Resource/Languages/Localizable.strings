@@ -6,4 +6,13 @@
   
 */
 
-"Input your Email" = "Input your Email";
+"Name" = "Name";
+"Email address" = "Email address";
+"Password" = "Password";
+"Confirm password" = "Confirm password";
+"Create your account" = "Create your account";
+"Login with your account" = "Login with your account";
+"LOGIN" = "LOGIN";
+"CREATE" = "CREATE";
+"Don't have account?" = "Don't have account?";
+"Sign Up" = "Sign Up";

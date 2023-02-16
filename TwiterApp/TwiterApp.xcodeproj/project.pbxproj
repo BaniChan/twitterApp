@@ -12,8 +12,14 @@
 		3109FBA8299CB0C000A256CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3109FBA7299CB0C000A256CE /* Assets.xcassets */; };
 		3109FBAB299CB0C000A256CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3109FBA9299CB0C000A256CE /* LaunchScreen.storyboard */; };
 		3109FBB6299CB0C000A256CE /* TwiterAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3109FBB5299CB0C000A256CE /* TwiterAppTests.swift */; };
-		3109FC1A299CB71900A256CE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3109FC19299CB71900A256CE /* HomeViewController.swift */; };
-		310F0E37299E15770097CA71 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310F0E36299E15770097CA71 /* HomeViewModel.swift */; };
+		3109FC1A299CB71900A256CE /* HomeNaviViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3109FC19299CB71900A256CE /* HomeNaviViewController.swift */; };
+		310F0E37299E15770097CA71 /* HomeNaviViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310F0E36299E15770097CA71 /* HomeNaviViewModel.swift */; };
+		310F0E3B299E4FA30097CA71 /* LayoutConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310F0E3A299E4FA30097CA71 /* LayoutConstant.swift */; };
+		310F0E3F299E50DB0097CA71 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310F0E3E299E50DB0097CA71 /* UITextField+Extension.swift */; };
+		310F0E41299E5B4D0097CA71 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310F0E40299E5B4D0097CA71 /* UIView+Extension.swift */; };
+		310F0E43299E5DE90097CA71 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310F0E42299E5DE90097CA71 /* UILabel+Extension.swift */; };
+		310F0E45299E657D0097CA71 /* CreateAccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310F0E44299E657D0097CA71 /* CreateAccountController.swift */; };
+		310F0E47299E66520097CA71 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310F0E46299E66520097CA71 /* UIButton+Extension.swift */; };
 		3160976A299DF26A00B31C96 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 31609769299DF26A00B31C96 /* GoogleService-Info.plist */; };
 		31609782299DFB6500B31C96 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 31609781299DFB6500B31C96 /* FirebaseAnalytics */; };
 		31609784299DFB6500B31C96 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 31609783299DFB6500B31C96 /* FirebaseAuth */; };
@@ -52,8 +58,14 @@
 		3109FBAC299CB0C000A256CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3109FBB1299CB0C000A256CE /* TwiterAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TwiterAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3109FBB5299CB0C000A256CE /* TwiterAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwiterAppTests.swift; sourceTree = "<group>"; };
-		3109FC19299CB71900A256CE /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		310F0E36299E15770097CA71 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		3109FC19299CB71900A256CE /* HomeNaviViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNaviViewController.swift; sourceTree = "<group>"; };
+		310F0E36299E15770097CA71 /* HomeNaviViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNaviViewModel.swift; sourceTree = "<group>"; };
+		310F0E3A299E4FA30097CA71 /* LayoutConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutConstant.swift; sourceTree = "<group>"; };
+		310F0E3E299E50DB0097CA71 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
+		310F0E40299E5B4D0097CA71 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		310F0E42299E5DE90097CA71 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
+		310F0E44299E657D0097CA71 /* CreateAccountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountController.swift; sourceTree = "<group>"; };
+		310F0E46299E66520097CA71 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		31609769299DF26A00B31C96 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		31609798299DFE9000B31C96 /* FirebaseAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthService.swift; sourceTree = "<group>"; };
 		316097A0299E0A5700B31C96 /* Resolver+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Resolver+Injection.swift"; sourceTree = "<group>"; };
@@ -113,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				3109FBD0299CB21F00A256CE /* DB */,
+				310F0E38299E4EA90097CA71 /* Constant */,
 				3109FBD9299CB36300A256CE /* App */,
 				3109FBD8299CB35500A256CE /* Core */,
 				3109FBCE299CB1E200A256CE /* Resource */,
@@ -188,6 +201,7 @@
 		3109FBD5299CB28300A256CE /* Flow */ = {
 			isa = PBXGroup;
 			children = (
+				310F0E3C299E50AE0097CA71 /* Component */,
 				316097A5299E0E6600B31C96 /* Account */,
 				3109FBD7299CB29B00A256CE /* Home */,
 			);
@@ -208,8 +222,8 @@
 		3109FBD7299CB29B00A256CE /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				3109FC19299CB71900A256CE /* HomeViewController.swift */,
-				310F0E36299E15770097CA71 /* HomeViewModel.swift */,
+				3109FC19299CB71900A256CE /* HomeNaviViewController.swift */,
+				310F0E36299E15770097CA71 /* HomeNaviViewModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -233,6 +247,33 @@
 				3109FBD5299CB28300A256CE /* Flow */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		310F0E38299E4EA90097CA71 /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				310F0E39299E4F8E0097CA71 /* Layout */,
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
+		310F0E39299E4F8E0097CA71 /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				310F0E3A299E4FA30097CA71 /* LayoutConstant.swift */,
+			);
+			path = Layout;
+			sourceTree = "<group>";
+		};
+		310F0E3C299E50AE0097CA71 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				310F0E3E299E50DB0097CA71 /* UITextField+Extension.swift */,
+				310F0E40299E5B4D0097CA71 /* UIView+Extension.swift */,
+				310F0E42299E5DE90097CA71 /* UILabel+Extension.swift */,
+				310F0E46299E66520097CA71 /* UIButton+Extension.swift */,
+			);
+			path = Component;
 			sourceTree = "<group>";
 		};
 		3160979A299E026500B31C96 /* Model */ = {
@@ -263,6 +304,7 @@
 		316097A6299E0EA100B31C96 /* CreateAccount */ = {
 			isa = PBXGroup;
 			children = (
+				310F0E44299E657D0097CA71 /* CreateAccountController.swift */,
 			);
 			path = CreateAccount;
 			sourceTree = "<group>";
@@ -401,14 +443,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				310F0E41299E5B4D0097CA71 /* UIView+Extension.swift in Sources */,
 				316097AA299E10A900B31C96 /* LoginViewController.swift in Sources */,
 				31609799299DFE9000B31C96 /* FirebaseAuthService.swift in Sources */,
 				3109FB9C299CB0BF00A256CE /* AppDelegate.swift in Sources */,
-				310F0E37299E15770097CA71 /* HomeViewModel.swift in Sources */,
+				310F0E37299E15770097CA71 /* HomeNaviViewModel.swift in Sources */,
 				3109FBA6299CB0BF00A256CE /* TwiterApp.xcdatamodeld in Sources */,
+				310F0E45299E657D0097CA71 /* CreateAccountController.swift in Sources */,
+				310F0E3F299E50DB0097CA71 /* UITextField+Extension.swift in Sources */,
 				316097A4299E0B6700B31C96 /* AuthRepository.swift in Sources */,
+				310F0E43299E5DE90097CA71 /* UILabel+Extension.swift in Sources */,
 				316097A1299E0A5700B31C96 /* Resolver+Injection.swift in Sources */,
-				3109FC1A299CB71900A256CE /* HomeViewController.swift in Sources */,
+				310F0E3B299E4FA30097CA71 /* LayoutConstant.swift in Sources */,
+				3109FC1A299CB71900A256CE /* HomeNaviViewController.swift in Sources */,
+				310F0E47299E66520097CA71 /* UIButton+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

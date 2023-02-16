@@ -1,5 +1,5 @@
 //
-//  HomeViewModel.swift
+//  HomeNaviViewModel.swift
 //  TwiterApp
 //
 //  Created by Bani Chan on 2023/2/16.
@@ -9,13 +9,13 @@ import UIKit
 import Foundation
 import Resolver
 
-protocol HomeViewModelDelegate: UINavigationController {
+protocol HomeNaviViewModelDelegate: UINavigationController {
 
 }
 
-class HomeViewModel {
+class HomeNaviViewModel {
     @Injected private var authRepository: AuthRepositoryProtocol
-    var viewController: HomeViewModelDelegate? = nil
+    var viewController: HomeNaviViewModelDelegate? = nil
     
     func handleUserLoggedIn() {
         guard !authRepository.loggedIn else { return }

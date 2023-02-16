@@ -1,5 +1,5 @@
 //
-//  LoginViewController.swift
+//  CreateAccountController.swift
 //  TwiterApp
 //
 //  Created by Bani Chan on 2023/2/16.
@@ -7,13 +7,24 @@
 
 import UIKit
 
-class LoginController: UIViewController {
-    private let mainTitle = UILabel.mainTitle("Login with your account")
+class CreateAccountController: UIViewController {
+    private let mainTitle = UILabel.mainTitle("Create your account")
+    private let nameTextField = UITextField.name
     private let emailTextField = UITextField.email
     private let passwordTextField = UITextField.password
-    private let loginButton = UIButton.defaultButton("LOGIN")
+    private let confirmPasswordTextField = UITextField.confirmPassword
+    private let createButton = UIButton.defaultButton("CREATE")
     
     private let inputFieldVPadding: CGFloat = 30
+    
+    private lazy var nameContainer: UIStackView = {
+       let container = UIStackView(arrangedSubviews: [UILabel.inputFieldTitle("Name"), nameTextField, UIView.separator])
+        container.translatesAutoresizingMaskIntoConstraints = false
+        container.axis = .vertical
+        container.spacing = 0
+        container.distribution = .fillProportionally
+        return container
+    }()
     
     private lazy var emailContainer: UIStackView = {
        let container = UIStackView(arrangedSubviews: [UILabel.inputFieldTitle("Email address"), emailTextField, UIView.separator])
@@ -33,30 +44,10 @@ class LoginController: UIViewController {
         return container
     }()
     
-    private let signUpLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = UIColor(named: "MainTitle")
-        label.text = "Don't have account?"
-        label.font = UIFont.systemFont(ofSize: 16)
-        return label
-    }()
-    
-    private let signUpButton: UIButton = {
-        let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Create Account", for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 16)
-        button.setTitleColor(UIColor(named: "SignUpLinkText"), for: .normal)
-        button.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        return button
-    }()
-    
-    private lazy var signUpContainer: UIStackView = {
-       let container = UIStackView(arrangedSubviews: [signUpLabel, signUpButton])
+    private lazy var confirmPasswordContainer: UIStackView = {
+       let container = UIStackView(arrangedSubviews: [UILabel.inputFieldTitle("Confirm password"), confirmPasswordTextField, UIView.separator])
         container.translatesAutoresizingMaskIntoConstraints = false
-        container.axis = .horizontal
-        container.spacing = 8
+        container.axis = .vertical
         container.distribution = .fillProportionally
         return container
     }()
@@ -76,9 +67,16 @@ class LoginController: UIViewController {
             mainTitle.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -LayoutConstant.edgeSpacing)
         ])
         
+        view.addSubview(nameContainer)
+        NSLayoutConstraint.activate([
+            nameContainer.topAnchor.constraint(equalTo: mainTitle.bottomAnchor, constant: inputFieldVPadding),
+            nameContainer.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: LayoutConstant.edgeSpacing),
+            nameContainer.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -LayoutConstant.edgeSpacing)
+        ])
+        
         view.addSubview(emailContainer)
         NSLayoutConstraint.activate([
-            emailContainer.topAnchor.constraint(equalTo: mainTitle.bottomAnchor, constant: inputFieldVPadding),
+            emailContainer.topAnchor.constraint(equalTo: nameContainer.bottomAnchor, constant: inputFieldVPadding),
             emailContainer.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: LayoutConstant.edgeSpacing),
             emailContainer.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -LayoutConstant.edgeSpacing)
         ])
@@ -90,17 +88,18 @@ class LoginController: UIViewController {
             passwordContainer.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -LayoutConstant.edgeSpacing)
         ])
         
-        view.addSubview(signUpContainer)
+        view.addSubview(confirmPasswordContainer)
         NSLayoutConstraint.activate([
-            signUpContainer.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -60),
-            signUpContainer.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: LayoutConstant.edgeSpacing)
+            confirmPasswordContainer.topAnchor.constraint(equalTo: passwordContainer.bottomAnchor, constant: inputFieldVPadding),
+            confirmPasswordContainer.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: LayoutConstant.edgeSpacing),
+            confirmPasswordContainer.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -LayoutConstant.edgeSpacing)
         ])
         
-        view.addSubview(loginButton)
+        view.addSubview(createButton)
         NSLayoutConstraint.activate([
-            loginButton.bottomAnchor.constraint(equalTo: signUpContainer.topAnchor, constant: -15),
-            loginButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: LayoutConstant.edgeSpacing),
-            loginButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -LayoutConstant.edgeSpacing)
+            createButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100),
+            createButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: LayoutConstant.edgeSpacing),
+            createButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -LayoutConstant.edgeSpacing)
         ])
     }
 }
