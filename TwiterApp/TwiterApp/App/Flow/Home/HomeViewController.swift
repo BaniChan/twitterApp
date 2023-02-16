@@ -7,15 +7,23 @@
 
 import UIKit
 import FirebaseAuth
+import Resolver
 
-class HomeViewController: UIViewController {
-
+class HomeViewController: UINavigationController, HomeViewModelDelegate {
+    let viewModel = HomeViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        let handle = Auth.auth().addStateDidChangeListener { auth, user in
-          print("\(auth) \(user)")
-        }
+        setupUI()
+        viewModel.viewController = self
     }
 
-
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        viewModel.handleUserLoggedIn()
+    }
+    
+    func setupUI() {
+        view.backgroundColor = UIColor(named: "Background")
+    }
 }

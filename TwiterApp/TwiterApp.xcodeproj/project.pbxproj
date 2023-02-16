@@ -13,7 +13,7 @@
 		3109FBAB299CB0C000A256CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3109FBA9299CB0C000A256CE /* LaunchScreen.storyboard */; };
 		3109FBB6299CB0C000A256CE /* TwiterAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3109FBB5299CB0C000A256CE /* TwiterAppTests.swift */; };
 		3109FC1A299CB71900A256CE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3109FC19299CB71900A256CE /* HomeViewController.swift */; };
-		3109FC20299CB78800A256CE /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3109FC1F299CB78800A256CE /* HomeViewController.xib */; };
+		310F0E37299E15770097CA71 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310F0E36299E15770097CA71 /* HomeViewModel.swift */; };
 		3160976A299DF26A00B31C96 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 31609769299DF26A00B31C96 /* GoogleService-Info.plist */; };
 		31609782299DFB6500B31C96 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 31609781299DFB6500B31C96 /* FirebaseAnalytics */; };
 		31609784299DFB6500B31C96 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 31609783299DFB6500B31C96 /* FirebaseAuth */; };
@@ -28,6 +28,9 @@
 		3160979F299E09F400B31C96 /* Resolver in Frameworks */ = {isa = PBXBuildFile; productRef = 3160979E299E09F400B31C96 /* Resolver */; };
 		316097A1299E0A5700B31C96 /* Resolver+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316097A0299E0A5700B31C96 /* Resolver+Injection.swift */; };
 		316097A4299E0B6700B31C96 /* AuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316097A3299E0B6700B31C96 /* AuthRepository.swift */; };
+		316097AA299E10A900B31C96 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316097A9299E10A900B31C96 /* LoginViewController.swift */; };
+		316097AC299E11E400B31C96 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 316097AB299E11E400B31C96 /* Localizable.strings */; };
+		316097AE299E125100B31C96 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 316097AD299E125100B31C96 /* Colors.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,11 +53,14 @@
 		3109FBB1299CB0C000A256CE /* TwiterAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TwiterAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3109FBB5299CB0C000A256CE /* TwiterAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwiterAppTests.swift; sourceTree = "<group>"; };
 		3109FC19299CB71900A256CE /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		3109FC1F299CB78800A256CE /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		310F0E36299E15770097CA71 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		31609769299DF26A00B31C96 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		31609798299DFE9000B31C96 /* FirebaseAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthService.swift; sourceTree = "<group>"; };
 		316097A0299E0A5700B31C96 /* Resolver+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Resolver+Injection.swift"; sourceTree = "<group>"; };
 		316097A3299E0B6700B31C96 /* AuthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepository.swift; sourceTree = "<group>"; };
+		316097A9299E10A900B31C96 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		316097AB299E11E400B31C96 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		316097AD299E125100B31C96 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +134,7 @@
 			children = (
 				3109FBCF299CB20200A256CE /* Languages */,
 				3109FBA7299CB0C000A256CE /* Assets.xcassets */,
+				316097AD299E125100B31C96 /* Colors.xcassets */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -135,6 +142,7 @@
 		3109FBCF299CB20200A256CE /* Languages */ = {
 			isa = PBXGroup;
 			children = (
+				316097AB299E11E400B31C96 /* Localizable.strings */,
 			);
 			path = Languages;
 			sourceTree = "<group>";
@@ -201,7 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				3109FC19299CB71900A256CE /* HomeViewController.swift */,
-				3109FC1F299CB78800A256CE /* HomeViewController.xib */,
+				310F0E36299E15770097CA71 /* HomeViewModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -262,6 +270,7 @@
 		316097A7299E0EB800B31C96 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				316097A9299E10A900B31C96 /* LoginViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -370,10 +379,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				316097AE299E125100B31C96 /* Colors.xcassets in Resources */,
 				3109FBAB299CB0C000A256CE /* LaunchScreen.storyboard in Resources */,
+				316097AC299E11E400B31C96 /* Localizable.strings in Resources */,
 				3160976A299DF26A00B31C96 /* GoogleService-Info.plist in Resources */,
 				3109FBA8299CB0C000A256CE /* Assets.xcassets in Resources */,
-				3109FC20299CB78800A256CE /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,8 +401,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				316097AA299E10A900B31C96 /* LoginViewController.swift in Sources */,
 				31609799299DFE9000B31C96 /* FirebaseAuthService.swift in Sources */,
 				3109FB9C299CB0BF00A256CE /* AppDelegate.swift in Sources */,
+				310F0E37299E15770097CA71 /* HomeViewModel.swift in Sources */,
 				3109FBA6299CB0BF00A256CE /* TwiterApp.xcdatamodeld in Sources */,
 				316097A4299E0B6700B31C96 /* AuthRepository.swift in Sources */,
 				316097A1299E0A5700B31C96 /* Resolver+Injection.swift in Sources */,

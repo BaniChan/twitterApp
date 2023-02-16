@@ -9,8 +9,7 @@ import FirebaseAuth
 import Resolver
 
 protocol AuthRepositoryProtocol {
-    func addAuthStateDidChangeListener(_ listener: @escaping (Auth, FirebaseAuth.User?) -> Void) -> AuthStateDidChangeListenerHandle
-    func removeStateDidChangeListener(_ handle: AuthStateDidChangeListenerHandle)
+    var loggedIn: Bool { get }
     func createUser(
         email: String,
         displayName: String,
@@ -23,12 +22,8 @@ protocol AuthRepositoryProtocol {
 class AuthRepository: AuthRepositoryProtocol {
     @Injected private var firebaseAuthService: FirebaseAuthServiceProtocol
     
-    func addAuthStateDidChangeListener(_ listener: @escaping (Auth, FirebaseAuth.User?) -> Void) -> AuthStateDidChangeListenerHandle {
-        firebaseAuthService.addAuthStateDidChangeListener(listener)
-    }
-    
-    func removeStateDidChangeListener(_ handle: AuthStateDidChangeListenerHandle) {
-        firebaseAuthService.removeStateDidChangeListener(handle)
+    var loggedIn: Bool {
+        Auth.auth().currentUser != nil
     }
     
     func createUser(

@@ -10,11 +10,9 @@ import Resolver
 
 extension Resolver: ResolverRegistering {
     public static func registerAllServices() {
-        //view model
-        
 
         //repositories
-
+        register { AuthRepository() as AuthRepositoryProtocol }.scope(.shared)
         
         //services
         register { FirebaseAuthService() as FirebaseAuthServiceProtocol }.scope(.shared)
