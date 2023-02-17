@@ -18,7 +18,7 @@ class CreateAccountViewController: UIViewController {
     private let passwordTextField = CustomTextField.password
     private let confirmPasswordTextField = CustomTextField.confirmPassword
     private let errorLabel = CustomLabel.error
-    private let createButton = CustomButton.defaultButton(R.string.localizable.creatE())
+    private let createButton = CustomButton.defaultButton(R.string.localizable.create())
     private let loadingIndicator = CustomIndicatorView.loadingIndicator
     
     private let inputFieldVPadding: CGFloat = 30
@@ -182,10 +182,6 @@ extension CreateAccountViewController: CreateAccountViewModelOutput {
     func enableCreateButton(_ enable: Bool) {
         createButton.isEnabled = enable
         createButton.backgroundColor = enable ? CustomButton.enableBackgroundColor: CustomButton.disableBackgroundColor
-    }
-    
-    func dismiss() {
-        navigationController?.popViewController(animated: true)
     }
     
     func showLoading(_ show: Bool) {

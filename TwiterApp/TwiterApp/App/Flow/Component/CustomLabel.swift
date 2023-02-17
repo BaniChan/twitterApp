@@ -28,6 +28,16 @@ struct CustomLabel {
         return label
     }
     
+    static var welcomTitle: UILabel {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = R.color.mainTitle()
+        label.text = R.string.localizable.seeWhoSHappyInTheWorldRightNow()
+        label.font = UIFont.boldSystemFont(ofSize: 35)
+        label.numberOfLines = 0
+        return label
+    }
+    
     static var error: UILabel {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false

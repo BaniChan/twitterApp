@@ -15,7 +15,6 @@ protocol CreateAccountViewModelOutput {
     var confirmPassword: String? { get }
     func showError(_ error: String?)
     func enableCreateButton(_ enable: Bool)
-    func dismiss()
     func showLoading(_ show: Bool)
 }
 
@@ -39,6 +38,11 @@ class CreateAccountViewModel {
     @Injected private var authRepository: AuthRepositoryProtocol
     
     var viewController: ViewController?
+    private let createSuccessCallback: () -> Void
+    
+    init(createSuccessCallback: @escaping () -> Void) {
+        self.createSuccessCallback = createSuccessCallback
+    }
     
     @objc func textFieldEditingChanged() {
         viewController?.showError(nil)
@@ -85,7 +89,7 @@ class CreateAccountViewModel {
                     self?.viewController?.showError(error?.localizedDescription)
                     return
                 }
-                self?.viewController?.dismiss()
+                self?.createSuccessCallback()
         }
     }
 }

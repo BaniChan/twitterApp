@@ -7,9 +7,8 @@
 
 import UIKit
 
-class LoginController: UIViewController {
+class LoginViewController: UIViewController {
     typealias ViewModel = LoginViewModel
-    typealias LoginSuccessCallback = () -> Void
     
     private let viewModel: ViewModel
     private let topIcon = CustonImageView.smaillIcon
@@ -17,13 +16,11 @@ class LoginController: UIViewController {
     private let emailTextField = CustomTextField.email
     private let passwordTextField = CustomTextField.password
     private let errorLabel = CustomLabel.error
-    private let loginButton = CustomButton.defaultButton(R.string.localizable.logiN())
+    private let loginButton = CustomButton.defaultButton(R.string.localizable.logIn())
     private let loadingIndicator = CustomIndicatorView.loadingIndicator
-    private let loginSuccessCallback: LoginSuccessCallback
     
-    init(viewModel: ViewModel, loginSuccessCallback: @escaping LoginSuccessCallback) {
+    init(viewModel: ViewModel) {
         self.viewModel = viewModel
-        self.loginSuccessCallback = loginSuccessCallback
         super.init(nibName: nil, bundle: nil)
         self.viewModel.viewController = self
     }
@@ -48,34 +45,6 @@ class LoginController: UIViewController {
         container.translatesAutoresizingMaskIntoConstraints = false
         container.axis = .vertical
         container.spacing = 0
-        container.distribution = .fillProportionally
-        return container
-    }()
-    
-    private let signUpLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = R.color.mainTitle()
-        label.text = R.string.localizable.donTHaveAccount()
-        label.font = UIFont.systemFont(ofSize: 16)
-        return label
-    }()
-    
-    private let signUpButton: UIButton = {
-        let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle(R.string.localizable.createAccount(), for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 16)
-        button.setTitleColor(R.color.signUpLinkText(), for: .normal)
-        button.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        return button
-    }()
-    
-    private lazy var signUpContainer: UIStackView = {
-       let container = UIStackView(arrangedSubviews: [signUpLabel, signUpButton])
-        container.translatesAutoresizingMaskIntoConstraints = false
-        container.axis = .horizontal
-        container.spacing = 8
         container.distribution = .fillProportionally
         return container
     }()
@@ -126,16 +95,9 @@ class LoginController: UIViewController {
             errorLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -LayoutConstant.edgeSpacing)
         ])
         
-        view.addSubview(signUpContainer)
-        NSLayoutConstraint.activate([
-            signUpContainer.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -60),
-            signUpContainer.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: LayoutConstant.edgeSpacing)
-        ])
-        signUpButton.addTarget(viewModel, action: #selector(viewModel.clickSignUpButton), for: .touchUpInside)
-        
         view.addSubview(loginButton)
         NSLayoutConstraint.activate([
-            loginButton.bottomAnchor.constraint(equalTo: signUpContainer.topAnchor, constant: -15),
+            loginButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -75),
             loginButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: LayoutConstant.edgeSpacing),
             loginButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -LayoutConstant.edgeSpacing)
         ])
@@ -149,14 +111,14 @@ class LoginController: UIViewController {
     }
 }
 
-extension LoginController: UITextFieldDelegate {
+extension LoginViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
 }
 
-extension LoginController: LoginViewModelOutput {
+extension LoginViewController: LoginViewModelOutput {
     var email: String? {
         emailTextField.text
     }
@@ -172,10 +134,6 @@ extension LoginController: LoginViewModelOutput {
     func enableLoginButton(_ enable: Bool) {
         loginButton.isEnabled = enable
         loginButton.backgroundColor = enable ? CustomButton.enableBackgroundColor: CustomButton.disableBackgroundColor
-    }
-    
-    func loginSuccess() {
-        loginSuccessCallback()
     }
     
     func showLoading(_ show: Bool) {

@@ -14,7 +14,6 @@ protocol LoginViewModelOutput: UIViewController {
     var password: String? { get }
     func showError(_ error: String?)
     func enableLoginButton(_ enable: Bool)
-    func loginSuccess()
     func showLoading(_ show: Bool)
 }
 
@@ -36,6 +35,11 @@ class LoginViewModel {
     @Injected private var authRepository: AuthRepositoryProtocol
     
     weak var viewController: ViewController?
+    private let loginSuccessCallback: () -> Void
+    
+    init(loginSuccessCallback: @escaping () -> Void) {
+        self.loginSuccessCallback = loginSuccessCallback
+    }
     
     @objc func textFieldEditingChanged() {
         viewController?.showError(nil)
@@ -62,11 +66,6 @@ class LoginViewModel {
         viewController?.enableLoginButton(error == nil)
     }
     
-    @objc func clickSignUpButton() {
-        let createAccountViewController = CreateAccountViewController(viewModel: CreateAccountViewModel())
-        self.viewController?.navigationController?.pushViewController(createAccountViewController, animated: true)
-    }
-    
     @objc func clickLoginButton() {
         guard let email = viewController?.email,
               let password = viewController?.password else { return }
@@ -77,7 +76,7 @@ class LoginViewModel {
                 self?.viewController?.showError(error?.localizedDescription)
                 return
             }
-            self?.viewController?.loginSuccess()
+            self?.loginSuccessCallback()
         }
     }
 }

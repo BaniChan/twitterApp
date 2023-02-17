@@ -43,6 +43,8 @@
 		316097AA299E10A900B31C96 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316097A9299E10A900B31C96 /* LoginViewController.swift */; };
 		316097AE299E125100B31C96 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 316097AD299E125100B31C96 /* Colors.xcassets */; };
 		31FEBDBE299F69D900D8BB95 /* RswiftLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = 31FEBDBD299F69D900D8BB95 /* RswiftLibrary */; };
+		31FEBDC8299F6F6C00D8BB95 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FEBDC7299F6F6C00D8BB95 /* WelcomeViewController.swift */; };
+		31FEBDCB299F6F8900D8BB95 /* WelcomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FEBDCA299F6F8900D8BB95 /* WelcomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +86,8 @@
 		316097A3299E0B6700B31C96 /* AuthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepository.swift; sourceTree = "<group>"; };
 		316097A9299E10A900B31C96 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		316097AD299E125100B31C96 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		31FEBDC7299F6F6C00D8BB95 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		31FEBDCA299F6F8900D8BB95 /* WelcomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,6 +220,7 @@
 			isa = PBXGroup;
 			children = (
 				310F0E3C299E50AE0097CA71 /* Component */,
+				31FEBDC6299F6E0F00D8BB95 /* Welcome */,
 				316097A5299E0E6600B31C96 /* Account */,
 				3109FBD7299CB29B00A256CE /* Home */,
 			);
@@ -349,6 +354,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		31FEBDC6299F6E0F00D8BB95 /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				31FEBDC7299F6F6C00D8BB95 /* WelcomeViewController.swift */,
+				31FEBDCA299F6F8900D8BB95 /* WelcomeViewModel.swift */,
+			);
+			path = Welcome;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -472,6 +486,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				310F0E41299E5B4D0097CA71 /* CustomView.swift in Sources */,
+				31FEBDC8299F6F6C00D8BB95 /* WelcomeViewController.swift in Sources */,
 				316097AA299E10A900B31C96 /* LoginViewController.swift in Sources */,
 				31609799299DFE9000B31C96 /* FirebaseAuthService.swift in Sources */,
 				3109FB9C299CB0BF00A256CE /* AppDelegate.swift in Sources */,
@@ -480,6 +495,7 @@
 				310F0E45299E657D0097CA71 /* CreateAccountViewController.swift in Sources */,
 				310F0E3F299E50DB0097CA71 /* CustomTextField.swift in Sources */,
 				316097A4299E0B6700B31C96 /* AuthRepository.swift in Sources */,
+				31FEBDCB299F6F8900D8BB95 /* WelcomeViewModel.swift in Sources */,
 				310F0E53299F58370097CA71 /* CustomIndicatorView.swift in Sources */,
 				310F0E4F299F48000097CA71 /* CreateAccountViewModel.swift in Sources */,
 				310F0E43299E5DE90097CA71 /* CustomLabel.swift in Sources */,
