@@ -20,3 +20,7 @@
 "CREATE" = "CREATE";
 "Don't have account?" = "Don't have account?";
 "Sign Up" = "Sign Up";
+"Please input valid email" = "Please input valid email";
+"Password's length shoud be more than 6" = "Password's length shoud be more than 6";
+"Passwords do not matched" = "Passwords do not matched";
+"Email is already in use" = "Email is already in use";

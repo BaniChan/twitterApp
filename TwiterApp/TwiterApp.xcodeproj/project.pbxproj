@@ -22,6 +22,9 @@
 		310F0E47299E66520097CA71 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310F0E46299E66520097CA71 /* CustomButton.swift */; };
 		310F0E49299F075A0097CA71 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310F0E48299F075A0097CA71 /* LoginViewModel.swift */; };
 		310F0E4B299F124F0097CA71 /* CustonImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310F0E4A299F124F0097CA71 /* CustonImageView.swift */; };
+		310F0E4F299F48000097CA71 /* CreateAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310F0E4E299F48000097CA71 /* CreateAccountViewModel.swift */; };
+		310F0E51299F564D0097CA71 /* String+Extenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310F0E50299F564D0097CA71 /* String+Extenstion.swift */; };
+		310F0E53299F58370097CA71 /* CustomIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310F0E52299F58370097CA71 /* CustomIndicatorView.swift */; };
 		3160976A299DF26A00B31C96 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 31609769299DF26A00B31C96 /* GoogleService-Info.plist */; };
 		31609782299DFB6500B31C96 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 31609781299DFB6500B31C96 /* FirebaseAnalytics */; };
 		31609784299DFB6500B31C96 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 31609783299DFB6500B31C96 /* FirebaseAuth */; };
@@ -70,6 +73,9 @@
 		310F0E46299E66520097CA71 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		310F0E48299F075A0097CA71 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		310F0E4A299F124F0097CA71 /* CustonImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustonImageView.swift; sourceTree = "<group>"; };
+		310F0E4E299F48000097CA71 /* CreateAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewModel.swift; sourceTree = "<group>"; };
+		310F0E50299F564D0097CA71 /* String+Extenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extenstion.swift"; sourceTree = "<group>"; };
+		310F0E52299F58370097CA71 /* CustomIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomIndicatorView.swift; sourceTree = "<group>"; };
 		31609769299DF26A00B31C96 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		31609798299DFE9000B31C96 /* FirebaseAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthService.swift; sourceTree = "<group>"; };
 		316097A0299E0A5700B31C96 /* Resolver+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Resolver+Injection.swift"; sourceTree = "<group>"; };
@@ -175,6 +181,7 @@
 		3109FBD1299CB23500A256CE /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				310F0E50299F564D0097CA71 /* String+Extenstion.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -277,6 +284,7 @@
 				310F0E42299E5DE90097CA71 /* CustomLabel.swift */,
 				310F0E46299E66520097CA71 /* CustomButton.swift */,
 				310F0E4A299F124F0097CA71 /* CustonImageView.swift */,
+				310F0E52299F58370097CA71 /* CustomIndicatorView.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -310,6 +318,7 @@
 			isa = PBXGroup;
 			children = (
 				310F0E44299E657D0097CA71 /* CreateAccountViewController.swift */,
+				310F0E4E299F48000097CA71 /* CreateAccountViewModel.swift */,
 			);
 			path = CreateAccount;
 			sourceTree = "<group>";
@@ -458,6 +467,8 @@
 				310F0E45299E657D0097CA71 /* CreateAccountViewController.swift in Sources */,
 				310F0E3F299E50DB0097CA71 /* CustomTextField.swift in Sources */,
 				316097A4299E0B6700B31C96 /* AuthRepository.swift in Sources */,
+				310F0E53299F58370097CA71 /* CustomIndicatorView.swift in Sources */,
+				310F0E4F299F48000097CA71 /* CreateAccountViewModel.swift in Sources */,
 				310F0E43299E5DE90097CA71 /* CustomLabel.swift in Sources */,
 				310F0E4B299F124F0097CA71 /* CustonImageView.swift in Sources */,
 				310F0E49299F075A0097CA71 /* LoginViewModel.swift in Sources */,
@@ -465,6 +476,7 @@
 				310F0E3B299E4FA30097CA71 /* LayoutConstant.swift in Sources */,
 				3109FC1A299CB71900A256CE /* HomeNaviViewController.swift in Sources */,
 				310F0E47299E66520097CA71 /* CustomButton.swift in Sources */,
+				310F0E51299F564D0097CA71 /* String+Extenstion.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

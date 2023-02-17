@@ -27,4 +27,13 @@ struct CustomLabel {
         label.numberOfLines = 0
         return label
     }
+    
+    static var error: UILabel {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = UIColor(named: "ErrorText")
+        label.font = UIFont.systemFont(ofSize: 18)
+        label.numberOfLines = 0
+        return label
+    }
 }

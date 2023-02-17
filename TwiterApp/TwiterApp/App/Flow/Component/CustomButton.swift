@@ -8,14 +8,17 @@
 import UIKit
 
 struct CustomButton {
+    static let enableBackgroundColor = UIColor(named: "ButtonBackground")
+    static let disableBackgroundColor = UIColor(named: "ButtonBackground_disable")
     static func defaultButton(_ title: String) -> UIButton {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle(title, for: .normal)
         button.setTitleColor(UIColor(named: "ButtonTitle"), for: .normal)
-        button.backgroundColor = UIColor(named: "ButtonBackground")
+        button.backgroundColor = disableBackgroundColor
         button.heightAnchor.constraint(equalToConstant: 40).isActive = true
         button.layer.cornerRadius = 10
+        button.isEnabled = false
         return button
     }
 }

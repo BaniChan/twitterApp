@@ -11,8 +11,8 @@ import Resolver
 protocol AuthRepositoryProtocol {
     var loggedIn: Bool { get }
     func createUser(
-        email: String,
         displayName: String,
+        email: String,
         password: String,
         completion: ((AuthDataResult?, Error?) -> Void)?)
     func signIn(email: String, password: String, completion: ((AuthDataResult?, Error?) -> Void)?)
@@ -27,8 +27,8 @@ class AuthRepository: AuthRepositoryProtocol {
     }
     
     func createUser(
-        email: String,
         displayName: String,
+        email: String,
         password: String,
         completion: ((AuthDataResult?, Error?) -> Void)?) {
             firebaseAuthService.createUser(

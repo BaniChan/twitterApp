@@ -38,6 +38,8 @@ struct CustomTextField {
         textField.textColor = UIColor(named: "InputText")
         textField.placeholder = "Input password"
         textField.font = UIFont.systemFont(ofSize: fontSize)
+        // use oneTimeCode for now to dismiss keychain error
+        textField.textContentType = .oneTimeCode
         textField.isSecureTextEntry = true
         textField.heightAnchor.constraint(equalToConstant: CustomTextField.height).isActive = true
         return textField

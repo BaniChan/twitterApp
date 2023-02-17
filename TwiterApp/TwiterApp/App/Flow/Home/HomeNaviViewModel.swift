@@ -26,7 +26,9 @@ class HomeNaviViewModel {
     }
     
     private func showLoginView() {
-        let loginVC = LoginController(viewModel: LoginViewModel())
+        let loginVC = LoginController(viewModel: LoginViewModel()) {
+            print("login success")
+        }
         viewController?.setViewControllers([loginVC], animated: true)
     }
 }
