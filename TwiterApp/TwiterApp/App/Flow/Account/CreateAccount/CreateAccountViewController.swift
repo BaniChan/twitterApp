@@ -11,7 +11,7 @@ class CreateAccountViewController: UIViewController {
     typealias ViewModel = CreateAccountViewModel
     
     private let viewModel: ViewModel
-    private let topIcon = CustonImageView.smaillIcon
+    private let topIcon = CustomImageView.smallIcon
     private let mainTitle = CustomLabel.mainTitle(R.string.localizable.createYourAccount())
     private let nameTextField = CustomTextField.name
     private let emailTextField = CustomTextField.email

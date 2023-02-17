@@ -5,12 +5,10 @@
 //  Created by Bani Chan on 2023/2/17.
 //
 
-
-import UIKit
 import Foundation
 import Resolver
 
-protocol WelcomeViewModelOutput: UIViewController {
+protocol WelcomeViewModelOutput {
     func showCreateAccountView(createSuccessCallback: @escaping () -> Void)
     func showLoginView(loginSuccessCallback: @escaping () -> Void)
 }
@@ -23,7 +21,7 @@ class WelcomeViewModel {
         self.loginSuccessCallback = loginSuccessCallback
     }
     
-    weak var viewController: ViewController?
+    var viewController: ViewController?
     
     @objc func clickCreateAccountButton() {
         viewController?.showCreateAccountView() { [weak self] in

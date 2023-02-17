@@ -11,7 +11,7 @@ class LoginViewController: UIViewController {
     typealias ViewModel = LoginViewModel
     
     private let viewModel: ViewModel
-    private let topIcon = CustonImageView.smaillIcon
+    private let topIcon = CustomImageView.smallIcon
     private let mainTitle = CustomLabel.mainTitle(R.string.localizable.loginWithYourAccount())
     private let emailTextField = CustomTextField.email
     private let passwordTextField = CustomTextField.password

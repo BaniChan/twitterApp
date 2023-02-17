@@ -12,7 +12,7 @@ class WelcomeViewController: UIViewController {
     typealias LoginSuccessCallback = () -> Void
     
     private let viewModel: ViewModel
-    private let topIcon = CustonImageView.smaillIcon
+    private let topIcon = CustomImageView.smallIcon
     private let mainTitle = CustomLabel.welcomTitle
     private let createAccountButton = CustomButton.defaultButton(R.string.localizable.createAccount(), enable: true)
     
@@ -104,7 +104,8 @@ extension WelcomeViewController: WelcomeViewModelOutput {
         let viewModel = LoginViewModel(loginSuccessCallback: loginSuccessCallback)
         let viewController = LoginViewController(viewModel: viewModel)
         guard var viewControllers = navigationController?.viewControllers,
-              type(of: viewControllers.last) != CreateAccountViewController.self else {
+              let lastVC = viewControllers.last,
+              type(of: lastVC) == CreateAccountViewController.self else {
             navigationController?.pushViewController(viewController, animated: true)
             return
         }

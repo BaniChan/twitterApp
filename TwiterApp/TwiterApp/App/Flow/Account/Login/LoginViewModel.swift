@@ -5,11 +5,10 @@
 //  Created by Bani Chan on 2023/2/17.
 //
 
-import UIKit
 import Foundation
 import Resolver
 
-protocol LoginViewModelOutput: UIViewController {
+protocol LoginViewModelOutput {
     var email: String? { get }
     var password: String? { get }
     func showError(_ error: String?)
@@ -34,7 +33,7 @@ class LoginViewModel {
     
     @Injected private var authRepository: AuthRepositoryProtocol
     
-    weak var viewController: ViewController?
+    var viewController: ViewController?
     private let loginSuccessCallback: () -> Void
     
     init(loginSuccessCallback: @escaping () -> Void) {

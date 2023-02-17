@@ -1,5 +1,5 @@
 //
-//  HomeNaviViewController.swift
+//  BaseNaviViewController.swift
 //  TwiterApp
 //
 //  Created by Bani Chan on 2023/2/15.
@@ -9,8 +9,8 @@ import UIKit
 import FirebaseAuth
 import Resolver
 
-class HomeNaviViewController: UINavigationController {
-    typealias ViewModel = HomeNaviViewModel
+class BaseNaviViewController: UINavigationController {
+    typealias ViewModel = BaseNaviViewModel
     private let viewModel: ViewModel
     
     init(viewModel: ViewModel) {
@@ -34,12 +34,23 @@ class HomeNaviViewController: UINavigationController {
     }
     
     func setupUI() {
+        setNavigationBarHidden(true, animated: false)
         view.backgroundColor = R.color.background()
         navigationBar.tintColor = R.color.buttonBackground()
 
     }
 }
 
-extension HomeNaviViewController: HomeNaviViewModelOutput {
+extension BaseNaviViewController: BaseNaviViewModelOutput {
+    func showWelcomeView(loginSuccessCallback: @escaping () -> Void) {
+        let viewModel = WelcomeViewModel(loginSuccessCallback: loginSuccessCallback)
+        let loginVC = WelcomeViewController(viewModel: viewModel)
+        setViewControllers([loginVC], animated: true)
+    }
     
+    func showHomeView(logoutCallback: @escaping () -> Void) {
+        let viewModel = HomeViewModel(logoutCallback: logoutCallback)
+        let homeVC = HomeViewController(viewModel: viewModel)
+        setViewControllers([homeVC], animated: true)
+    }
 }
