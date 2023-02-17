@@ -7,9 +7,13 @@
 */
 
 "Name" = "Name";
+"Input name" = "Input name";
 "Email address" = "Email address";
+"Input email address" = "Input email address";
 "Password" = "Password";
+"Input password" = "Input password";
 "Confirm password" = "Confirm password";
+"Input same password again" = "Input same password again";
 "Create your account" = "Create your account";
 "Login with your account" = "Login with your account";
 "LOGIN" = "LOGIN";

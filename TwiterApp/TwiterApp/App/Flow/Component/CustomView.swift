@@ -1,5 +1,5 @@
 //
-//  UIView+Extension.swift
+//  CustomView.swift
 //  TwiterApp
 //
 //  Created by Bani Chan on 2023/2/16.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension UIView {
+struct CustomView {
     static var separator: UIView {
         let separator = UIView()
         separator.translatesAutoresizingMaskIntoConstraints = false

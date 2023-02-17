@@ -8,15 +8,29 @@
 import UIKit
 
 class LoginController: UIViewController {
-    private let mainTitle = UILabel.mainTitle("Login with your account")
-    private let emailTextField = UITextField.email
-    private let passwordTextField = UITextField.password
-    private let loginButton = UIButton.defaultButton("LOGIN")
+    typealias ViewModel = LoginViewModel
+    
+    private let viewModel: ViewModel
+    private let topIcon = CustonImageView.smaillIcon
+    private let mainTitle = CustomLabel.mainTitle("Login with your account")
+    private let emailTextField = CustomTextField.email
+    private let passwordTextField = CustomTextField.password
+    private let loginButton = CustomButton.defaultButton("LOGIN")
+    
+    init(viewModel: ViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+        self.viewModel.viewController = self
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     private let inputFieldVPadding: CGFloat = 30
     
     private lazy var emailContainer: UIStackView = {
-       let container = UIStackView(arrangedSubviews: [UILabel.inputFieldTitle("Email address"), emailTextField, UIView.separator])
+       let container = UIStackView(arrangedSubviews: [CustomLabel.inputFieldTitle("Email address"), emailTextField, CustomView.separator])
         container.translatesAutoresizingMaskIntoConstraints = false
         container.axis = .vertical
         container.spacing = 0
@@ -25,7 +39,7 @@ class LoginController: UIViewController {
     }()
     
     private lazy var passwordContainer: UIStackView = {
-       let container = UIStackView(arrangedSubviews: [UILabel.inputFieldTitle("Password"), passwordTextField, UIView.separator])
+       let container = UIStackView(arrangedSubviews: [CustomLabel.inputFieldTitle("Password"), passwordTextField, CustomView.separator])
         container.translatesAutoresizingMaskIntoConstraints = false
         container.axis = .vertical
         container.spacing = 0
@@ -68,10 +82,16 @@ class LoginController: UIViewController {
     
     func setupUI() {
         view.backgroundColor = UIColor(named: "Background")
+
+        view.addSubview(topIcon)
+        NSLayoutConstraint.activate([
+            topIcon.topAnchor.constraint(equalTo: view.topAnchor, constant: 30),
+            topIcon.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+        ])
         
         view.addSubview(mainTitle)
         NSLayoutConstraint.activate([
-            mainTitle.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
+            mainTitle.topAnchor.constraint(equalTo: topIcon.bottomAnchor),
             mainTitle.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: LayoutConstant.edgeSpacing),
             mainTitle.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -LayoutConstant.edgeSpacing)
         ])
@@ -89,6 +109,7 @@ class LoginController: UIViewController {
             passwordContainer.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: LayoutConstant.edgeSpacing),
             passwordContainer.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -LayoutConstant.edgeSpacing)
         ])
+        signUpButton.addTarget(viewModel, action: #selector(viewModel.goCreateAccount), for: .touchUpInside)
         
         view.addSubview(signUpContainer)
         NSLayoutConstraint.activate([
@@ -105,3 +126,6 @@ class LoginController: UIViewController {
     }
 }
 
+extension LoginController: LoginViewModelOutput {
+    
+}

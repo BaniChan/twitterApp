@@ -1,5 +1,5 @@
 //
-//  CreateAccountController.swift
+//  CreateAccountViewController.swift
 //  TwiterApp
 //
 //  Created by Bani Chan on 2023/2/16.
@@ -7,18 +7,19 @@
 
 import UIKit
 
-class CreateAccountController: UIViewController {
-    private let mainTitle = UILabel.mainTitle("Create your account")
-    private let nameTextField = UITextField.name
-    private let emailTextField = UITextField.email
-    private let passwordTextField = UITextField.password
-    private let confirmPasswordTextField = UITextField.confirmPassword
-    private let createButton = UIButton.defaultButton("CREATE")
+class CreateAccountViewController: UIViewController {
+    private let topIcon = CustonImageView.smaillIcon
+    private let mainTitle = CustomLabel.mainTitle("Create your account")
+    private let nameTextField = CustomTextField.name
+    private let emailTextField = CustomTextField.email
+    private let passwordTextField = CustomTextField.password
+    private let confirmPasswordTextField = CustomTextField.confirmPassword
+    private let createButton = CustomButton.defaultButton("CREATE")
     
     private let inputFieldVPadding: CGFloat = 30
     
     private lazy var nameContainer: UIStackView = {
-       let container = UIStackView(arrangedSubviews: [UILabel.inputFieldTitle("Name"), nameTextField, UIView.separator])
+       let container = UIStackView(arrangedSubviews: [CustomLabel.inputFieldTitle("Name"), nameTextField, CustomView.separator])
         container.translatesAutoresizingMaskIntoConstraints = false
         container.axis = .vertical
         container.spacing = 0
@@ -27,7 +28,7 @@ class CreateAccountController: UIViewController {
     }()
     
     private lazy var emailContainer: UIStackView = {
-       let container = UIStackView(arrangedSubviews: [UILabel.inputFieldTitle("Email address"), emailTextField, UIView.separator])
+       let container = UIStackView(arrangedSubviews: [CustomLabel.inputFieldTitle("Email address"), emailTextField, CustomView.separator])
         container.translatesAutoresizingMaskIntoConstraints = false
         container.axis = .vertical
         container.spacing = 0
@@ -36,7 +37,7 @@ class CreateAccountController: UIViewController {
     }()
     
     private lazy var passwordContainer: UIStackView = {
-       let container = UIStackView(arrangedSubviews: [UILabel.inputFieldTitle("Password"), passwordTextField, UIView.separator])
+       let container = UIStackView(arrangedSubviews: [CustomLabel.inputFieldTitle("Password"), passwordTextField, CustomView.separator])
         container.translatesAutoresizingMaskIntoConstraints = false
         container.axis = .vertical
         container.spacing = 0
@@ -45,7 +46,7 @@ class CreateAccountController: UIViewController {
     }()
     
     private lazy var confirmPasswordContainer: UIStackView = {
-       let container = UIStackView(arrangedSubviews: [UILabel.inputFieldTitle("Confirm password"), confirmPasswordTextField, UIView.separator])
+       let container = UIStackView(arrangedSubviews: [CustomLabel.inputFieldTitle("Confirm password"), confirmPasswordTextField, CustomView.separator])
         container.translatesAutoresizingMaskIntoConstraints = false
         container.axis = .vertical
         container.distribution = .fillProportionally
@@ -60,9 +61,15 @@ class CreateAccountController: UIViewController {
     func setupUI() {
         view.backgroundColor = UIColor(named: "Background")
         
+        view.addSubview(topIcon)
+        NSLayoutConstraint.activate([
+            topIcon.topAnchor.constraint(equalTo: view.topAnchor, constant: 30),
+            topIcon.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+        ])
+        
         view.addSubview(mainTitle)
         NSLayoutConstraint.activate([
-            mainTitle.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
+            mainTitle.topAnchor.constraint(equalTo: topIcon.bottomAnchor),
             mainTitle.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: LayoutConstant.edgeSpacing),
             mainTitle.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -LayoutConstant.edgeSpacing)
         ])
@@ -97,7 +104,7 @@ class CreateAccountController: UIViewController {
         
         view.addSubview(createButton)
         NSLayoutConstraint.activate([
-            createButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100),
+            createButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -60),
             createButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: LayoutConstant.edgeSpacing),
             createButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -LayoutConstant.edgeSpacing)
         ])

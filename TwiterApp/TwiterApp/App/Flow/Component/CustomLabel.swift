@@ -1,5 +1,5 @@
 //
-//  UILabel+Extension.swift
+//  CustomLabel.swift
 //  TwiterApp
 //
 //  Created by Bani Chan on 2023/2/16.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension UILabel {
+struct CustomLabel {
     static func inputFieldTitle(_ title: String) -> UILabel {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false

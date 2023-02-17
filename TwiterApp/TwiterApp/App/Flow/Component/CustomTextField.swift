@@ -1,5 +1,5 @@
 //
-//  UITextField+Extension.swift
+//  CustomTextField.swift
 //  TwiterApp
 //
 //  Created by Bani Chan on 2023/2/16.
@@ -7,17 +7,17 @@
 
 import UIKit
 
-extension UITextField {
+struct CustomTextField {
     static let fontSize: CGFloat = 16
-    static let height: CGFloat = 30
+    static let height: CGFloat = 40
     
     static var name: UITextField {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.textColor = UIColor(named: "InputText")
-        textField.placeholder = "Name"
+        textField.placeholder = "Input name"
         textField.font = UIFont.systemFont(ofSize: fontSize)
-        textField.heightAnchor.constraint(equalToConstant: UITextField.height).isActive = true
+        textField.heightAnchor.constraint(equalToConstant: CustomTextField.height).isActive = true
         return textField
     }
     
@@ -25,10 +25,10 @@ extension UITextField {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.textColor = UIColor(named: "InputText")
-        textField.placeholder = "Email address"
+        textField.placeholder = "Input email address"
         textField.font = UIFont.systemFont(ofSize: fontSize)
         textField.keyboardType = .emailAddress
-        textField.heightAnchor.constraint(equalToConstant: UITextField.height).isActive = true
+        textField.heightAnchor.constraint(equalToConstant: CustomTextField.height).isActive = true
         return textField
     }
     
@@ -36,10 +36,10 @@ extension UITextField {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.textColor = UIColor(named: "InputText")
-        textField.placeholder = "Password"
+        textField.placeholder = "Input password"
         textField.font = UIFont.systemFont(ofSize: fontSize)
         textField.isSecureTextEntry = true
-        textField.heightAnchor.constraint(equalToConstant: UITextField.height).isActive = true
+        textField.heightAnchor.constraint(equalToConstant: CustomTextField.height).isActive = true
         return textField
     }
     
@@ -47,10 +47,10 @@ extension UITextField {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.textColor = UIColor(named: "InputText")
-        textField.placeholder = "Confirm password"
+        textField.placeholder = "Input same password again"
         textField.font = UIFont.systemFont(ofSize: fontSize)
         textField.isSecureTextEntry = true
-        textField.heightAnchor.constraint(equalToConstant: UITextField.height).isActive = true
+        textField.heightAnchor.constraint(equalToConstant: CustomTextField.height).isActive = true
         return textField
     }
 }

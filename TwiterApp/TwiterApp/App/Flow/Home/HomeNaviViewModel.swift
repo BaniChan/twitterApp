@@ -9,13 +9,16 @@ import UIKit
 import Foundation
 import Resolver
 
-protocol HomeNaviViewModelDelegate: UINavigationController {
+protocol HomeNaviViewModelOutput: UINavigationController {
 
 }
 
 class HomeNaviViewModel {
+    typealias ViewController = HomeNaviViewModelOutput
+    
     @Injected private var authRepository: AuthRepositoryProtocol
-    var viewController: HomeNaviViewModelDelegate? = nil
+    
+    weak var viewController: ViewController?
     
     func handleUserLoggedIn() {
         guard !authRepository.loggedIn else { return }
@@ -23,7 +26,7 @@ class HomeNaviViewModel {
     }
     
     private func showLoginView() {
-        let loginVC = LoginController()
+        let loginVC = LoginController(viewModel: LoginViewModel())
         viewController?.setViewControllers([loginVC], animated: true)
     }
 }

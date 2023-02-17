@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         let frame = UIScreen.main.bounds
         window = UIWindow(frame: frame)
-        let navi = HomeNaviViewController()
+        let navi = HomeNaviViewController(viewModel: HomeNaviViewModel())
         window!.rootViewController = navi
         window!.makeKeyAndVisible()
         return true

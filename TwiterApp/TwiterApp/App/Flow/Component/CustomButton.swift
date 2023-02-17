@@ -1,5 +1,5 @@
 //
-//  UIButton+Extension.swift
+//  CustomButton.swift
 //  TwiterApp
 //
 //  Created by Bani Chan on 2023/2/16.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension UIButton {
+struct CustomButton {
     static func defaultButton(_ title: String) -> UIButton {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
