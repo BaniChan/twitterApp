@@ -32,4 +32,3 @@ struct CustomButton {
         return button
     }
 }
-

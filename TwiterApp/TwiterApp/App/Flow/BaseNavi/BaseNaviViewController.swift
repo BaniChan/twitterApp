@@ -34,10 +34,8 @@ class BaseNaviViewController: UINavigationController {
     }
     
     func setupUI() {
-        setNavigationBarHidden(true, animated: false)
         view.backgroundColor = R.color.background()
         navigationBar.tintColor = R.color.buttonBackground()
-
     }
 }
 

@@ -147,8 +147,6 @@ class CreateAccountViewController: UIViewController {
             loadingIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])
     }
-    
-    
 }
 
 extension CreateAccountViewController: UITextFieldDelegate {

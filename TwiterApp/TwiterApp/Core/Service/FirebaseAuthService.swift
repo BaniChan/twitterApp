@@ -8,8 +8,6 @@
 import FirebaseAuth
 
 protocol FirebaseAuthServiceProtocol {
-//    func addAuthStateDidChangeListener(_ listener: @escaping (Auth, User?) -> Void) -> AuthStateDidChangeListenerHandle
-//    func removeStateDidChangeListener(_ handle: AuthStateDidChangeListenerHandle)
     func currentUser() -> User?
     func createUser(email: String, password: String, completion: ((AuthDataResult?, Error?) -> Void)?)
     func signIn(email: String, password: String, completion: ((AuthDataResult?, Error?) -> Void)?)
@@ -18,14 +16,6 @@ protocol FirebaseAuthServiceProtocol {
 }
 
 class FirebaseAuthService: FirebaseAuthServiceProtocol {
-//    func addAuthStateDidChangeListener(_ listener: @escaping (Auth, User?) -> Void) -> AuthStateDidChangeListenerHandle {
-//        Auth.auth().addIDTokenDidChangeListener(listener)
-//    }
-//    
-//    func removeStateDidChangeListener(_ handle: AuthStateDidChangeListenerHandle) {
-//        Auth.auth().removeStateDidChangeListener(handle)
-//    }
-    
     func currentUser() -> User? {
         Auth.auth().currentUser
     }

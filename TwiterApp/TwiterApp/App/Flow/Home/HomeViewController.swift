@@ -32,6 +32,7 @@ class HomeViewController: UIViewController {
     }
     
     func setupUI() {
+        navigationController?.setNavigationBarHidden(true, animated: false)
         view.backgroundColor = R.color.background()
         
         view.addSubview(topIcon)

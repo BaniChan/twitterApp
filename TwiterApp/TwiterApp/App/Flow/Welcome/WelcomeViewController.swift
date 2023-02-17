@@ -60,6 +60,7 @@ class WelcomeViewController: UIViewController {
     }()
     
     func setupUI() {
+        navigationController?.setNavigationBarHidden(false, animated: false)
         view.backgroundColor = R.color.background()
 
         view.addSubview(topIcon)

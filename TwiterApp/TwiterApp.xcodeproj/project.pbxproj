@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3109FB9C299CB0BF00A256CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3109FB9B299CB0BF00A256CE /* AppDelegate.swift */; };
-		3109FBA6299CB0BF00A256CE /* TwiterApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3109FBA4299CB0BF00A256CE /* TwiterApp.xcdatamodeld */; };
 		3109FBA8299CB0C000A256CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3109FBA7299CB0C000A256CE /* Assets.xcassets */; };
 		3109FBAB299CB0C000A256CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3109FBA9299CB0C000A256CE /* LaunchScreen.storyboard */; };
 		3109FBB6299CB0C000A256CE /* TwiterAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3109FBB5299CB0C000A256CE /* TwiterAppTests.swift */; };
@@ -62,7 +61,6 @@
 /* Begin PBXFileReference section */
 		3109FB98299CB0BF00A256CE /* TwiterApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwiterApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3109FB9B299CB0BF00A256CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3109FBA5299CB0BF00A256CE /* TwiterApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TwiterApp.xcdatamodel; sourceTree = "<group>"; };
 		3109FBA7299CB0C000A256CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3109FBAA299CB0C000A256CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3109FBAC299CB0C000A256CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -145,7 +143,6 @@
 		3109FB9A299CB0BF00A256CE /* TwiterApp */ = {
 			isa = PBXGroup;
 			children = (
-				3109FBD0299CB21F00A256CE /* DB */,
 				310F0E38299E4EA90097CA71 /* Constant */,
 				3109FBD9299CB36300A256CE /* App */,
 				3109FBD8299CB35500A256CE /* Core */,
@@ -181,27 +178,12 @@
 			path = Languages;
 			sourceTree = "<group>";
 		};
-		3109FBD0299CB21F00A256CE /* DB */ = {
-			isa = PBXGroup;
-			children = (
-				3109FBA4299CB0BF00A256CE /* TwiterApp.xcdatamodeld */,
-			);
-			path = DB;
-			sourceTree = "<group>";
-		};
 		3109FBD1299CB23500A256CE /* Helper */ = {
 			isa = PBXGroup;
 			children = (
 				310F0E50299F564D0097CA71 /* String+Extenstion.swift */,
 			);
 			path = Helper;
-			sourceTree = "<group>";
-		};
-		3109FBD2299CB24000A256CE /* DAO */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = DAO;
 			sourceTree = "<group>";
 		};
 		3109FBD3299CB24F00A256CE /* Service */ = {
@@ -257,9 +239,7 @@
 			children = (
 				316097A2299E0B2A00B31C96 /* Injection */,
 				3109FBD1299CB23500A256CE /* Helper */,
-				3160979A299E026500B31C96 /* Model */,
 				3109FBD3299CB24F00A256CE /* Service */,
-				3109FBD2299CB24000A256CE /* DAO */,
 				3109FBD4299CB25900A256CE /* Repository */,
 			);
 			path = Core;
@@ -302,13 +282,6 @@
 			path = Component;
 			sourceTree = "<group>";
 		};
-		3160979A299E026500B31C96 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		316097A2299E0B2A00B31C96 /* Injection */ = {
 			isa = PBXGroup;
 			children = (
@@ -320,7 +293,6 @@
 		316097A5299E0E6600B31C96 /* Account */ = {
 			isa = PBXGroup;
 			children = (
-				316097A8299E0EC900B31C96 /* Profile */,
 				316097A7299E0EB800B31C96 /* Login */,
 				316097A6299E0EA100B31C96 /* CreateAccount */,
 			);
@@ -343,13 +315,6 @@
 				310F0E48299F075A0097CA71 /* LoginViewModel.swift */,
 			);
 			path = Login;
-			sourceTree = "<group>";
-		};
-		316097A8299E0EC900B31C96 /* Profile */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Profile;
 			sourceTree = "<group>";
 		};
 		31D1EA5F299F873B00DFDCCD /* Home */ = {
@@ -506,7 +471,6 @@
 				3109FB9C299CB0BF00A256CE /* AppDelegate.swift in Sources */,
 				31D1EA64299F879D00DFDCCD /* HomeViewModel.swift in Sources */,
 				310F0E37299E15770097CA71 /* BaseNaviViewModel.swift in Sources */,
-				3109FBA6299CB0BF00A256CE /* TwiterApp.xcdatamodeld in Sources */,
 				31D1EA62299F874C00DFDCCD /* HomeViewController.swift in Sources */,
 				310F0E45299E657D0097CA71 /* CreateAccountViewController.swift in Sources */,
 				310F0E3F299E50DB0097CA71 /* CustomTextField.swift in Sources */,
@@ -909,19 +873,6 @@
 			productName = "plugin:RswiftGenerateInternalResources";
 		};
 /* End XCSwiftPackageProductDependency section */
-
-/* Begin XCVersionGroup section */
-		3109FBA4299CB0BF00A256CE /* TwiterApp.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				3109FBA5299CB0BF00A256CE /* TwiterApp.xcdatamodel */,
-			);
-			currentVersion = 3109FBA5299CB0BF00A256CE /* TwiterApp.xcdatamodel */;
-			path = TwiterApp.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 3109FB90299CB0BE00A256CE /* Project object */;
 }
