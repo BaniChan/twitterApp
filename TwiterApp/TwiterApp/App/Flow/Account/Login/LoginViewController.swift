@@ -13,11 +13,11 @@ class LoginController: UIViewController {
     
     private let viewModel: ViewModel
     private let topIcon = CustonImageView.smaillIcon
-    private let mainTitle = CustomLabel.mainTitle("Login with your account")
+    private let mainTitle = CustomLabel.mainTitle(R.string.localizable.loginWithYourAccount())
     private let emailTextField = CustomTextField.email
     private let passwordTextField = CustomTextField.password
     private let errorLabel = CustomLabel.error
-    private let loginButton = CustomButton.defaultButton("LOGIN")
+    private let loginButton = CustomButton.defaultButton(R.string.localizable.logiN())
     private let loadingIndicator = CustomIndicatorView.loadingIndicator
     private let loginSuccessCallback: LoginSuccessCallback
     
@@ -35,7 +35,7 @@ class LoginController: UIViewController {
     private let inputFieldVPadding: CGFloat = 30
     
     private lazy var emailContainer: UIStackView = {
-       let container = UIStackView(arrangedSubviews: [CustomLabel.inputFieldTitle("Email address"), emailTextField, CustomView.separator])
+        let container = UIStackView(arrangedSubviews: [CustomLabel.inputFieldTitle(R.string.localizable.emailAddress()), emailTextField, CustomView.separator])
         container.translatesAutoresizingMaskIntoConstraints = false
         container.axis = .vertical
         container.spacing = 0
@@ -44,7 +44,7 @@ class LoginController: UIViewController {
     }()
     
     private lazy var passwordContainer: UIStackView = {
-       let container = UIStackView(arrangedSubviews: [CustomLabel.inputFieldTitle("Password"), passwordTextField, CustomView.separator])
+        let container = UIStackView(arrangedSubviews: [CustomLabel.inputFieldTitle(R.string.localizable.password()), passwordTextField, CustomView.separator])
         container.translatesAutoresizingMaskIntoConstraints = false
         container.axis = .vertical
         container.spacing = 0
@@ -55,8 +55,8 @@ class LoginController: UIViewController {
     private let signUpLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = UIColor(named: "MainTitle")
-        label.text = "Don't have account?"
+        label.textColor = R.color.mainTitle()
+        label.text = R.string.localizable.donTHaveAccount()
         label.font = UIFont.systemFont(ofSize: 16)
         return label
     }()
@@ -64,9 +64,9 @@ class LoginController: UIViewController {
     private let signUpButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Create Account", for: .normal)
+        button.setTitle(R.string.localizable.createAccount(), for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 16)
-        button.setTitleColor(UIColor(named: "SignUpLinkText"), for: .normal)
+        button.setTitleColor(R.color.signUpLinkText(), for: .normal)
         button.heightAnchor.constraint(equalToConstant: 40).isActive = true
         return button
     }()
@@ -86,7 +86,7 @@ class LoginController: UIViewController {
     }
     
     func setupUI() {
-        view.backgroundColor = UIColor(named: "Background")
+        view.backgroundColor = R.color.background()
 
         view.addSubview(topIcon)
         NSLayoutConstraint.activate([

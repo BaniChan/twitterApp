@@ -11,7 +11,7 @@ struct CustomLabel {
     static func inputFieldTitle(_ title: String) -> UILabel {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = UIColor(named: "InputFieldTitle")
+        label.textColor = R.color.inputFieldTitle()
         label.text = title
         label.font = UIFont.systemFont(ofSize: 18)
         label.heightAnchor.constraint(equalToConstant: 18).isActive = true
@@ -21,7 +21,7 @@ struct CustomLabel {
     static func mainTitle(_ title: String) -> UILabel {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = UIColor(named: "MainTitle")
+        label.textColor = R.color.mainTitle()
         label.text = title
         label.font = UIFont.systemFont(ofSize: 35)
         label.numberOfLines = 0
@@ -31,7 +31,7 @@ struct CustomLabel {
     static var error: UILabel {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = UIColor(named: "ErrorText")
+        label.textColor = R.color.errorText()
         label.font = UIFont.systemFont(ofSize: 18)
         label.numberOfLines = 0
         return label

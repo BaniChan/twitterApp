@@ -34,8 +34,8 @@ class HomeNaviViewController: UINavigationController {
     }
     
     func setupUI() {
-        view.backgroundColor = UIColor(named: "Background")
-        navigationBar.tintColor = UIColor(named: "ButtonBackground")
+        view.backgroundColor = R.color.background()
+        navigationBar.tintColor = R.color.buttonBackground()
 
     }
 }

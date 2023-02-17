@@ -27,9 +27,9 @@ class CreateAccountViewModel {
         
         var errorDescription: String? {
             switch self {
-            case .emailFormatInvalid: return "Please input valid email"
-            case .passwordLengthInvalid: return "Password's length shoud be more than 6"
-            case .passwordNotMatch: return "Passwords do not matched"
+            case .emailFormatInvalid: return R.string.localizable.pleaseInputValidEmail()
+            case .passwordLengthInvalid: return R.string.localizable.passwordSLengthShoudBeMoreThan6()
+            case .passwordNotMatch: return R.string.localizable.passwordsDoNotMatched()
             }
         }
     }

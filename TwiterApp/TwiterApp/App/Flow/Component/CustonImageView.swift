@@ -11,7 +11,7 @@ struct CustonImageView {
     static var smaillIcon: UIImageView {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.image = UIImage(named: "icon_pine")
+        imageView.image = R.image.icon_pine()
         imageView.contentMode = .scaleAspectFit
         imageView.heightAnchor.constraint(equalToConstant: 80).isActive = true
         imageView.widthAnchor.constraint(equalToConstant: 80).isActive = true

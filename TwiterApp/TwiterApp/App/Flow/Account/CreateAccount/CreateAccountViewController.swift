@@ -12,13 +12,13 @@ class CreateAccountViewController: UIViewController {
     
     private let viewModel: ViewModel
     private let topIcon = CustonImageView.smaillIcon
-    private let mainTitle = CustomLabel.mainTitle("Create your account")
+    private let mainTitle = CustomLabel.mainTitle(R.string.localizable.createYourAccount())
     private let nameTextField = CustomTextField.name
     private let emailTextField = CustomTextField.email
     private let passwordTextField = CustomTextField.password
     private let confirmPasswordTextField = CustomTextField.confirmPassword
     private let errorLabel = CustomLabel.error
-    private let createButton = CustomButton.defaultButton("CREATE")
+    private let createButton = CustomButton.defaultButton(R.string.localizable.creatE())
     private let loadingIndicator = CustomIndicatorView.loadingIndicator
     
     private let inputFieldVPadding: CGFloat = 30
@@ -34,7 +34,7 @@ class CreateAccountViewController: UIViewController {
     }
     
     private lazy var nameContainer: UIStackView = {
-       let container = UIStackView(arrangedSubviews: [CustomLabel.inputFieldTitle("Name"), nameTextField, CustomView.separator])
+        let container = UIStackView(arrangedSubviews: [CustomLabel.inputFieldTitle(R.string.localizable.name()), nameTextField, CustomView.separator])
         container.translatesAutoresizingMaskIntoConstraints = false
         container.axis = .vertical
         container.spacing = 0
@@ -43,7 +43,7 @@ class CreateAccountViewController: UIViewController {
     }()
     
     private lazy var emailContainer: UIStackView = {
-       let container = UIStackView(arrangedSubviews: [CustomLabel.inputFieldTitle("Email address"), emailTextField, CustomView.separator])
+        let container = UIStackView(arrangedSubviews: [CustomLabel.inputFieldTitle(R.string.localizable.emailAddress()), emailTextField, CustomView.separator])
         container.translatesAutoresizingMaskIntoConstraints = false
         container.axis = .vertical
         container.spacing = 0
@@ -52,7 +52,7 @@ class CreateAccountViewController: UIViewController {
     }()
     
     private lazy var passwordContainer: UIStackView = {
-       let container = UIStackView(arrangedSubviews: [CustomLabel.inputFieldTitle("Password"), passwordTextField, CustomView.separator])
+        let container = UIStackView(arrangedSubviews: [CustomLabel.inputFieldTitle(R.string.localizable.password()), passwordTextField, CustomView.separator])
         container.translatesAutoresizingMaskIntoConstraints = false
         container.axis = .vertical
         container.spacing = 0
@@ -61,7 +61,7 @@ class CreateAccountViewController: UIViewController {
     }()
     
     private lazy var confirmPasswordContainer: UIStackView = {
-       let container = UIStackView(arrangedSubviews: [CustomLabel.inputFieldTitle("Confirm password"), confirmPasswordTextField, CustomView.separator])
+        let container = UIStackView(arrangedSubviews: [CustomLabel.inputFieldTitle(R.string.localizable.confirmPassword()), confirmPasswordTextField, CustomView.separator])
         container.translatesAutoresizingMaskIntoConstraints = false
         container.axis = .vertical
         container.distribution = .fillProportionally
@@ -74,7 +74,7 @@ class CreateAccountViewController: UIViewController {
     }
     
     func setupUI() {
-        view.backgroundColor = UIColor(named: "Background")
+        view.backgroundColor = R.color.background()
         
         view.addSubview(topIcon)
         NSLayoutConstraint.activate([

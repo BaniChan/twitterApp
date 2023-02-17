@@ -25,6 +25,7 @@
 		310F0E4F299F48000097CA71 /* CreateAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310F0E4E299F48000097CA71 /* CreateAccountViewModel.swift */; };
 		310F0E51299F564D0097CA71 /* String+Extenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310F0E50299F564D0097CA71 /* String+Extenstion.swift */; };
 		310F0E53299F58370097CA71 /* CustomIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310F0E52299F58370097CA71 /* CustomIndicatorView.swift */; };
+		310F0E55299F64130097CA71 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 310F0E57299F64130097CA71 /* Localizable.strings */; };
 		3160976A299DF26A00B31C96 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 31609769299DF26A00B31C96 /* GoogleService-Info.plist */; };
 		31609782299DFB6500B31C96 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 31609781299DFB6500B31C96 /* FirebaseAnalytics */; };
 		31609784299DFB6500B31C96 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 31609783299DFB6500B31C96 /* FirebaseAuth */; };
@@ -40,8 +41,8 @@
 		316097A1299E0A5700B31C96 /* Resolver+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316097A0299E0A5700B31C96 /* Resolver+Injection.swift */; };
 		316097A4299E0B6700B31C96 /* AuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316097A3299E0B6700B31C96 /* AuthRepository.swift */; };
 		316097AA299E10A900B31C96 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316097A9299E10A900B31C96 /* LoginViewController.swift */; };
-		316097AC299E11E400B31C96 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 316097AB299E11E400B31C96 /* Localizable.strings */; };
 		316097AE299E125100B31C96 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 316097AD299E125100B31C96 /* Colors.xcassets */; };
+		31FEBDBE299F69D900D8BB95 /* RswiftLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = 31FEBDBD299F69D900D8BB95 /* RswiftLibrary */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,12 +77,12 @@
 		310F0E4E299F48000097CA71 /* CreateAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewModel.swift; sourceTree = "<group>"; };
 		310F0E50299F564D0097CA71 /* String+Extenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extenstion.swift"; sourceTree = "<group>"; };
 		310F0E52299F58370097CA71 /* CustomIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomIndicatorView.swift; sourceTree = "<group>"; };
+		310F0E56299F64130097CA71 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		31609769299DF26A00B31C96 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		31609798299DFE9000B31C96 /* FirebaseAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthService.swift; sourceTree = "<group>"; };
 		316097A0299E0A5700B31C96 /* Resolver+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Resolver+Injection.swift"; sourceTree = "<group>"; };
 		316097A3299E0B6700B31C96 /* AuthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepository.swift; sourceTree = "<group>"; };
 		316097A9299E10A900B31C96 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		316097AB299E11E400B31C96 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		316097AD299E125100B31C96 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -90,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31FEBDBE299F69D900D8BB95 /* RswiftLibrary in Frameworks */,
 				31609782299DFB6500B31C96 /* FirebaseAnalytics in Frameworks */,
 				31609786299DFB6500B31C96 /* FirebaseAuthCombine-Community in Frameworks */,
 				31609788299DFB6500B31C96 /* FirebaseDatabase in Frameworks */,
@@ -119,6 +121,7 @@
 				3109FB9A299CB0BF00A256CE /* TwiterApp */,
 				3109FBB4299CB0C000A256CE /* TwiterAppTests */,
 				3109FB99299CB0BF00A256CE /* Products */,
+				31FEBDBC299F69D900D8BB95 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -165,7 +168,7 @@
 		3109FBCF299CB20200A256CE /* Languages */ = {
 			isa = PBXGroup;
 			children = (
-				316097AB299E11E400B31C96 /* Localizable.strings */,
+				310F0E57299F64130097CA71 /* Localizable.strings */,
 			);
 			path = Languages;
 			sourceTree = "<group>";
@@ -339,6 +342,13 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
+		31FEBDBC299F69D900D8BB95 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -353,6 +363,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				31FEBDC0299F69EC00D8BB95 /* PBXTargetDependency */,
 			);
 			name = TwiterApp;
 			packageProductDependencies = (
@@ -366,6 +377,7 @@
 				3160978F299DFB6500B31C96 /* FirebaseStorage */,
 				31609791299DFB6500B31C96 /* FirebaseStorageCombine-Community */,
 				3160979E299E09F400B31C96 /* Resolver */,
+				31FEBDBD299F69D900D8BB95 /* RswiftLibrary */,
 			);
 			productName = TwiterApp;
 			productReference = 3109FB98299CB0BF00A256CE /* TwiterApp.app */;
@@ -420,6 +432,7 @@
 			packageReferences = (
 				31609780299DFB6500B31C96 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				3160979D299E09F400B31C96 /* XCRemoteSwiftPackageReference "Resolver" */,
+				310F0E5B299F686A0097CA71 /* XCRemoteSwiftPackageReference "R" */,
 			);
 			productRefGroup = 3109FB99299CB0BF00A256CE /* Products */;
 			projectDirPath = "";
@@ -438,7 +451,7 @@
 			files = (
 				316097AE299E125100B31C96 /* Colors.xcassets in Resources */,
 				3109FBAB299CB0C000A256CE /* LaunchScreen.storyboard in Resources */,
-				316097AC299E11E400B31C96 /* Localizable.strings in Resources */,
+				310F0E55299F64130097CA71 /* Localizable.strings in Resources */,
 				3160976A299DF26A00B31C96 /* GoogleService-Info.plist in Resources */,
 				3109FBA8299CB0C000A256CE /* Assets.xcassets in Resources */,
 			);
@@ -496,6 +509,10 @@
 			target = 3109FB97299CB0BF00A256CE /* TwiterApp */;
 			targetProxy = 3109FBB2299CB0C000A256CE /* PBXContainerItemProxy */;
 		};
+		31FEBDC0299F69EC00D8BB95 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 31FEBDBF299F69EC00D8BB95 /* RswiftGenerateInternalResources */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -507,6 +524,14 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		310F0E57299F64130097CA71 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				310F0E56299F64130097CA71 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -514,6 +539,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -574,6 +600,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -763,6 +790,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		310F0E5B299F686A0097CA71 /* XCRemoteSwiftPackageReference "R" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mac-cain13/R.swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 		31609780299DFB6500B31C96 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -831,6 +866,15 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 3160979D299E09F400B31C96 /* XCRemoteSwiftPackageReference "Resolver" */;
 			productName = Resolver;
+		};
+		31FEBDBD299F69D900D8BB95 /* RswiftLibrary */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 310F0E5B299F686A0097CA71 /* XCRemoteSwiftPackageReference "R" */;
+			productName = RswiftLibrary;
+		};
+		31FEBDBF299F69EC00D8BB95 /* RswiftGenerateInternalResources */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = "plugin:RswiftGenerateInternalResources";
 		};
 /* End XCSwiftPackageProductDependency section */
 
