@@ -25,9 +25,14 @@
 "Email is already in use" = "Email is already in use";
 "Have account already?" = "Have account already?";
 "Log in" = "Log in";
-"See who's happy in the world right now." = "See who's happy in the world right now.";
+"See what's happening in the world right now." = "See what's happening in the world right now.";
 "Create account" = "Create account";
 "Logout" = "Logout";
 "Are you sure you want to logout?" = "Are you sure you want to logout?";
 "Confirm" = "Confirm";
 "Cancel" = "Cancel";
+"Post" = "Post";
+"Choose Photo Source" = "Choose Photo Source";
+"Camera" = "Camera";
+"Gallery" = "Gallery";
+"What's happening?" = "What's happening?";

@@ -6,8 +6,6 @@
 //
 
 import UIKit
-import FirebaseAuth
-import Resolver
 
 class BaseNaviViewController: UINavigationController {
     typealias ViewModel = BaseNaviViewModel
@@ -26,10 +24,6 @@ class BaseNaviViewController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-    }
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
         viewModel.handleUserLoggedIn()
     }
     
@@ -42,13 +36,13 @@ class BaseNaviViewController: UINavigationController {
 extension BaseNaviViewController: BaseNaviViewModelOutput {
     func showWelcomeView(loginSuccessCallback: @escaping () -> Void) {
         let viewModel = WelcomeViewModel(loginSuccessCallback: loginSuccessCallback)
-        let loginVC = WelcomeViewController(viewModel: viewModel)
-        setViewControllers([loginVC], animated: true)
+        let viewController = WelcomeViewController(viewModel: viewModel)
+        setViewControllers([viewController], animated: true)
     }
     
     func showHomeView(logoutCallback: @escaping () -> Void) {
         let viewModel = HomeViewModel(logoutCallback: logoutCallback)
-        let homeVC = HomeViewController(viewModel: viewModel)
-        setViewControllers([homeVC], animated: true)
+        let viewController = HomeViewController(viewModel: viewModel)
+        setViewControllers([viewController], animated: true)
     }
 }

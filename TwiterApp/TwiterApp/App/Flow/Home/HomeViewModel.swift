@@ -5,12 +5,12 @@
 //  Created by Bani Chan on 2023/2/17.
 //
 
-import UIKit
 import Foundation
 import Resolver
 
 protocol HomeViewModelOutput {
     func showLogoutAlert()
+    func showPostView()
 }
 
 class HomeViewModel {
@@ -27,6 +27,10 @@ class HomeViewModel {
     
     @objc func clickAccountButton() {
         viewController?.showLogoutAlert()
+    }
+    
+    @objc func clickPostButton() {
+        viewController?.showPostView()
     }
     
     func logout() {

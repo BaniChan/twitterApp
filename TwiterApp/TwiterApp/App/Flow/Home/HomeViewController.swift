@@ -6,8 +6,6 @@
 //
 
 import UIKit
-import FirebaseAuth
-import Resolver
 
 class HomeViewController: UIViewController {
     typealias ViewModel = HomeViewModel
@@ -15,6 +13,7 @@ class HomeViewController: UIViewController {
     private let viewModel: ViewModel
     private let topIcon = CustomImageView.smallIcon
     private let accountButton = CustomButton.accountButton
+    private let addPostButton = CustomButton.addPostButton
     
     init(viewModel: ViewModel) {
         self.viewModel = viewModel
@@ -47,6 +46,13 @@ class HomeViewController: UIViewController {
             accountButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24)
         ])
         accountButton.addTarget(viewModel, action: #selector(viewModel.clickAccountButton), for: .touchUpInside)
+        
+        view.addSubview(addPostButton)
+        NSLayoutConstraint.activate([
+            addPostButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24),
+            addPostButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50)
+        ])
+        addPostButton.addTarget(viewModel, action: #selector(viewModel.clickPostButton), for: .touchUpInside)
     }
 }
 
@@ -61,5 +67,12 @@ extension HomeViewController: HomeViewModelOutput {
         })
         alert.addAction(UIAlertAction(title: R.string.localizable.cancel(), style: UIAlertAction.Style.cancel, handler: nil))
         present(alert, animated: true, completion: nil)
+    }
+    
+    func showPostView() {
+        let viewModel = PostViewModel()
+        let viewController = PostViewController(viewModel: viewModel)
+        viewController.modalPresentationStyle = .fullScreen
+        present(viewController, animated: true)
     }
 }

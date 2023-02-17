@@ -20,7 +20,7 @@ protocol AuthRepositoryProtocol {
 }
 
 class AuthRepository: AuthRepositoryProtocol {
-    @Injected private var firebaseAuthService: FirebaseAuthServiceProtocol
+    @Injected private var authService: AuthServiceProtocol
     
     var loggedIn: Bool {
         Auth.auth().currentUser != nil
@@ -31,7 +31,7 @@ class AuthRepository: AuthRepositoryProtocol {
         email: String,
         password: String,
         completion: ((AuthDataResult?, Error?) -> Void)?) {
-            firebaseAuthService.createUser(
+            authService.createUser(
                 email: email,
                 password: password) { [weak self] result, error in
                 self?.setDisplayName(displayName)
@@ -40,14 +40,14 @@ class AuthRepository: AuthRepositoryProtocol {
     }
     
     func signIn(email: String, password: String, completion: ((AuthDataResult?, Error?) -> Void)?) {
-        firebaseAuthService.signIn(email: email, password: password, completion: completion)
+        authService.signIn(email: email, password: password, completion: completion)
     }
     
     func signOut() throws {
-        try? firebaseAuthService.signOut()
+        try? authService.signOut()
     }
     
     private func setDisplayName(_ displayName: String) {
-        firebaseAuthService.setDisplayName(displayName)
+        authService.setDisplayName(displayName)
     }
 }

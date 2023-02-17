@@ -1,5 +1,5 @@
 //
-//  FirebaseAuthService.swift
+//  AuthService.swift
 //  TwiterApp
 //
 //  Created by Bani Chan on 2023/2/16.
@@ -7,7 +7,7 @@
 
 import FirebaseAuth
 
-protocol FirebaseAuthServiceProtocol {
+protocol AuthServiceProtocol {
     func currentUser() -> User?
     func createUser(email: String, password: String, completion: ((AuthDataResult?, Error?) -> Void)?)
     func signIn(email: String, password: String, completion: ((AuthDataResult?, Error?) -> Void)?)
@@ -15,7 +15,7 @@ protocol FirebaseAuthServiceProtocol {
     func setDisplayName(_ displayName: String)
 }
 
-class FirebaseAuthService: FirebaseAuthServiceProtocol {
+class AuthService: AuthServiceProtocol {
     func currentUser() -> User? {
         Auth.auth().currentUser
     }
