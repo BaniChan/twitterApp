@@ -35,6 +35,7 @@ class LoginViewModel {
     
     var viewController: ViewController?
     private let loginSuccessCallback: () -> Void
+    private var isLoading = false
     
     init(loginSuccessCallback: @escaping () -> Void) {
         self.loginSuccessCallback = loginSuccessCallback
@@ -66,6 +67,7 @@ class LoginViewModel {
     }
     
     @objc func clickLoginButton() {
+        guard !isLoading else { return }
         guard let email = viewController?.email,
               let password = viewController?.password else { return }
         viewController?.showLoading(true)
@@ -77,5 +79,10 @@ class LoginViewModel {
             }
             self?.loginSuccessCallback()
         }
+    }
+    
+    func showLoading(_ show: Bool) {
+        isLoading = show
+        viewController?.showLoading(show)
     }
 }

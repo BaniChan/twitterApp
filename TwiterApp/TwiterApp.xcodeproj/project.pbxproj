@@ -51,6 +51,7 @@
 		31D1EA79299FA5E200DFDCCD /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D1EA78299FA5E200DFDCCD /* PostViewModel.swift */; };
 		31D1EA7B299FC8BF00DFDCCD /* CustomTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D1EA7A299FC8BF00DFDCCD /* CustomTextView.swift */; };
 		31D1EA7F29A04C4400DFDCCD /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D1EA7E29A04C4400DFDCCD /* UIImage+Extension.swift */; };
+		31D1EA8229A0547F00DFDCCD /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D1EA8129A0547F00DFDCCD /* StorageService.swift */; };
 		31FEBDBE299F69D900D8BB95 /* RswiftLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = 31FEBDBD299F69D900D8BB95 /* RswiftLibrary */; };
 		31FEBDC8299F6F6C00D8BB95 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FEBDC7299F6F6C00D8BB95 /* WelcomeViewController.swift */; };
 		31FEBDCB299F6F8900D8BB95 /* WelcomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FEBDCA299F6F8900D8BB95 /* WelcomeViewModel.swift */; };
@@ -104,6 +105,7 @@
 		31D1EA78299FA5E200DFDCCD /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
 		31D1EA7A299FC8BF00DFDCCD /* CustomTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextView.swift; sourceTree = "<group>"; };
 		31D1EA7E29A04C4400DFDCCD /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		31D1EA8129A0547F00DFDCCD /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		31FEBDC7299F6F6C00D8BB95 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		31FEBDCA299F6F8900D8BB95 /* WelcomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -208,6 +210,7 @@
 			children = (
 				31609798299DFE9000B31C96 /* AuthService.swift */,
 				31D1EA6D299F9E3100DFDCCD /* DBService.swift */,
+				31D1EA8129A0547F00DFDCCD /* StorageService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -505,6 +508,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				310F0E41299E5B4D0097CA71 /* CustomView.swift in Sources */,
+				31D1EA8229A0547F00DFDCCD /* StorageService.swift in Sources */,
 				31FEBDC8299F6F6C00D8BB95 /* WelcomeViewController.swift in Sources */,
 				316097AA299E10A900B31C96 /* LoginViewController.swift in Sources */,
 				31609799299DFE9000B31C96 /* AuthService.swift in Sources */,

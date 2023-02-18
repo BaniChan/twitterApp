@@ -39,6 +39,7 @@ class CreateAccountViewModel {
     
     var viewController: ViewController?
     private let createSuccessCallback: () -> Void
+    private var isLoading = false
     
     init(createSuccessCallback: @escaping () -> Void) {
         self.createSuccessCallback = createSuccessCallback
@@ -76,6 +77,7 @@ class CreateAccountViewModel {
     }
     
     @objc func clickCreateButton() {
+        guard !isLoading else { return }
         guard let name = viewController?.name,
               let email = viewController?.email,
               let password = viewController?.password else { return }
@@ -91,5 +93,10 @@ class CreateAccountViewModel {
                 }
                 self?.createSuccessCallback()
         }
+    }
+    
+    func showLoading(_ show: Bool) {
+        isLoading = show
+        viewController?.showLoading(show)
     }
 }

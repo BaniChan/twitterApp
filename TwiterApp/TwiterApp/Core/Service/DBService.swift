@@ -8,7 +8,7 @@
 import Firebase
 
 protocol DBServiceProtocol {
-    func postTweet(userId: String, content: String, photo: String, completion: @escaping (Error?) -> Void)
+    func postTweet(userId: String, content: String?, imageURL: URL?, completion: @escaping (Error?) -> Void)
 }
 
 class DBService: DBServiceProtocol {
@@ -18,16 +18,17 @@ class DBService: DBServiceProtocol {
         db = Database.database().reference()
     }
     
-    func postTweet(userId: String, content: String, photo: String, completion: @escaping (Error?) -> Void) {
+    func postTweet(userId: String, content: String?, imageURL: URL?, completion: @escaping (Error?) -> Void) {
         let values: [String : Any] =
         [
             DBConstant.PostUser: userId,
-            DBConstant.PostContent: content,
-            DBConstant.PostPhoto: photo,
+            DBConstant.PostContent: content ?? "",
+            DBConstant.PostImage: imageURL?.absoluteString ?? "",
             DBConstant.PostTimestamp: Int(NSDate().timeIntervalSince1970)
         ]
         
         db.child(DBConstant.Post).childByAutoId().updateChildValues(values) { (error, ref) in
+            completion(error)
         }
     }
 }

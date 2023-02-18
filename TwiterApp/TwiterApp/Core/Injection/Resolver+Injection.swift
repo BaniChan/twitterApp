@@ -19,5 +19,6 @@ extension Resolver: ResolverRegistering {
         //service
         register { AuthService() as AuthServiceProtocol }.scope(.shared)
         register { DBService() as DBServiceProtocol }.scope(.shared)
+        register { StorageService() as StorageServiceProtocol }.scope(.shared)
     }
 }

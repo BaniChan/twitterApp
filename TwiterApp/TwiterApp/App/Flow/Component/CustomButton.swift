@@ -64,7 +64,7 @@ struct CustomButton {
         return button
     }
     
-    static var addPhotoButton: UIButton {
+    static var addImageButton: UIButton {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(R.image.icon_photo(), for: .normal)

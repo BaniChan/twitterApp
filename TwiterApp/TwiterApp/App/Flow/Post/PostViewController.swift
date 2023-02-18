@@ -12,8 +12,8 @@ class PostViewController: UIViewController {
     private let cancelButton = CustomButton.cancelButton
     private let postButton = CustomButton.postButton
     private let accountIcon = CustomImageView.accountIcon
-    private let addPhotoButton = CustomButton.addPhotoButton
-    private let deletePhotoButton = CustomButton.deleteButton
+    private let addImageButton = CustomButton.addImageButton
+    private let deleteImageButton = CustomButton.deleteButton
     private let photoImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -33,6 +33,7 @@ class PostViewController: UIViewController {
         label.heightAnchor.constraint(equalToConstant: 18).isActive = true
         return label
     }()
+    private let loadingIndicator = CustomIndicatorView.loadingIndicator
     private let viewModel: ViewModel
     
     init(viewModel: ViewModel) {
@@ -84,12 +85,12 @@ class PostViewController: UIViewController {
             accountIcon.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24)
         ])
         
-        view.addSubview(addPhotoButton)
+        view.addSubview(addImageButton)
         NSLayoutConstraint.activate([
-            addPhotoButton.centerYAnchor.constraint(equalTo: accountIcon.centerYAnchor),
-            addPhotoButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24)
+            addImageButton.centerYAnchor.constraint(equalTo: accountIcon.centerYAnchor),
+            addImageButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24)
         ])
-        addPhotoButton.addTarget(viewModel, action: #selector(viewModel.clickPhotoButton), for: .touchUpInside)
+        addImageButton.addTarget(viewModel, action: #selector(viewModel.clickImageButton), for: .touchUpInside)
         
         view.addSubview(placeholder)
         NSLayoutConstraint.activate([
@@ -115,13 +116,19 @@ class PostViewController: UIViewController {
             photoImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -39)
         ])
         
-        view.addSubview(deletePhotoButton)
-        deletePhotoButton.isHidden = true
+        view.addSubview(deleteImageButton)
+        deleteImageButton.isHidden = true
         NSLayoutConstraint.activate([
-            deletePhotoButton.topAnchor.constraint(equalTo: postContent.bottomAnchor, constant: 20),
-            deletePhotoButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24)
+            deleteImageButton.topAnchor.constraint(equalTo: postContent.bottomAnchor, constant: 20),
+            deleteImageButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24)
         ])
-        deletePhotoButton.addTarget(viewModel, action: #selector(viewModel.clickDeletePhotoButton), for: .touchUpInside)
+        deleteImageButton.addTarget(viewModel, action: #selector(viewModel.clickDeleteImageButton), for: .touchUpInside)
+        
+        view.addSubview(loadingIndicator)
+        NSLayoutConstraint.activate([
+            loadingIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            loadingIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        ])
     }
     
     private func openCamera() {
@@ -139,12 +146,19 @@ class PostViewController: UIViewController {
         imagePicker.sourceType = .photoLibrary
         self.present(imagePicker, animated: true, completion: nil)
     }
+    
+    private func updatePostButtonEnabled() {
+        let isEnabled = viewModel.canEnablePostButton
+        postButton.isEnabled = isEnabled
+        postButton.backgroundColor = isEnabled ? CustomButton.enableBackgroundColor : CustomButton.disableBackgroundColor
+    }
 }
 
 extension PostViewController: UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
         placeholder.isHidden = !textView.text.isEmpty
         textView.sizeToFit()
+        updatePostButtonEnabled()
     }
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
@@ -154,6 +168,10 @@ extension PostViewController: UITextViewDelegate {
 }
 
 extension PostViewController: PostViewModelOutput {
+    var content: String {
+        postContent.text
+    }
+    
     func showImageSourceSelection() {
         let alert = UIAlertController(title: R.string.localizable.choosePhotoSource(), message: nil, preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: R.string.localizable.camera(), style: .default, handler: { [weak self] _ in
@@ -166,17 +184,39 @@ extension PostViewController: PostViewModelOutput {
         present(alert, animated: true, completion: nil)
     }
     
-    func showPhoto(_ show: Bool) {
+    func showImage(_ show: Bool) {
         let scaledImage = viewModel.selectedImage?.resize(withSize: CGSize(width: 250, height: 400), contentMode: .contentAspectFit)
         photoImageView.image = scaledImage
         photoImageView.sizeToFit()
-        addPhotoButton.isHidden = show
-        deletePhotoButton.isHidden = !show
+        addImageButton.isHidden = show
+        deleteImageButton.isHidden = !show
         photoImageView.isHidden = !show
+        updatePostButtonEnabled()
     }
     
     func dismiss() {
          dismiss(animated: true)
+    }
+    
+    func showLoading(_ show: Bool) {
+        if show {
+            loadingIndicator.startAnimating()
+        } else {
+            loadingIndicator.stopAnimating()
+        }
+    }
+    
+    func showError(_ error: String?) {
+        guard let error = error else { return }
+        let alert = UIAlertController(
+            title: R.string.localizable.somethingWrong(),
+            message: error.description,
+            preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: R.string.localizable.tryAgain(), style: UIAlertAction.Style.default) { [weak self] action in
+            self?.viewModel.clickPostButton()
+        })
+        alert.addAction(UIAlertAction(title: R.string.localizable.cancel(), style: UIAlertAction.Style.cancel, handler: nil))
+        present(alert, animated: true, completion: nil)
     }
 }
 
@@ -184,7 +224,7 @@ extension PostViewController: UIImagePickerControllerDelegate, UINavigationContr
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let image = info[.editedImage] as? UIImage else {return}
         viewModel.selectedImage = image
-        showPhoto(true)
+        showImage(true)
         dismiss(animated: true, completion: nil)
     }
 }

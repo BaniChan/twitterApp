@@ -15,6 +15,6 @@ struct DBConstant {
     // Key
     static let PostUser = "user"
     static let PostContent = "content"
-    static let PostPhoto = "photo"
+    static let PostImage = "image"
     static let PostTimestamp = "timestamp"
 }
