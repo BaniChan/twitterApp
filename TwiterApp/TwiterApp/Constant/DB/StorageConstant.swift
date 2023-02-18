@@ -9,5 +9,5 @@ import Foundation
 
 struct StorageConstant {
     // Folder
-    static let TweetImage = "TweetImage"
+    static let PostImage = "PostImage"
 }

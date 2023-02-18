@@ -18,7 +18,6 @@ class PostViewController: UIViewController {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
-        imageView.backgroundColor = .black
         imageView.layer.masksToBounds = true
         imageView.layer.cornerRadius = 15
         imageView.isHidden = true
@@ -109,8 +108,6 @@ class PostViewController: UIViewController {
         ])
         
         view.addSubview(photoImageView)
-        photoImageView.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
-        photoImageView.setContentCompressionResistancePriority(.defaultLow, for: .vertical)
         NSLayoutConstraint.activate([
             photoImageView.widthAnchor.constraint(lessThanOrEqualToConstant: 250),
             photoImageView.heightAnchor.constraint(lessThanOrEqualToConstant: 400),
@@ -151,7 +148,8 @@ extension PostViewController: UITextViewDelegate {
     }
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-        textView.text.count + (text.count - range.length) <= 140
+        guard text.rangeOfCharacter(from: CharacterSet.newlines) == nil else { return false }
+        return textView.text.count + (text.count - range.length) <= 140
     }
 }
 
@@ -169,7 +167,9 @@ extension PostViewController: PostViewModelOutput {
     }
     
     func showPhoto(_ show: Bool) {
-        photoImageView.image = viewModel.selectedImage
+        let scaledImage = viewModel.selectedImage?.resize(withSize: CGSize(width: 250, height: 400), contentMode: .contentAspectFit)
+        photoImageView.image = scaledImage
+        photoImageView.sizeToFit()
         addPhotoButton.isHidden = show
         deletePhotoButton.isHidden = !show
         photoImageView.isHidden = !show

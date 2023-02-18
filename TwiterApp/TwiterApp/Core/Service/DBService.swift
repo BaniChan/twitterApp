@@ -21,13 +21,13 @@ class DBService: DBServiceProtocol {
     func postTweet(userId: String, content: String, photo: String, completion: @escaping (Error?) -> Void) {
         let values: [String : Any] =
         [
-            DBConstant.TweetUser: userId,
-            DBConstant.TweetContent: content,
-            DBConstant.TweetPhoto: photo,
-            DBConstant.TweetTimestamp: Int(NSDate().timeIntervalSince1970)
+            DBConstant.PostUser: userId,
+            DBConstant.PostContent: content,
+            DBConstant.PostPhoto: photo,
+            DBConstant.PostTimestamp: Int(NSDate().timeIntervalSince1970)
         ]
         
-        db.child(DBConstant.Tweet).childByAutoId().updateChildValues(values) { (error, ref) in
+        db.child(DBConstant.Post).childByAutoId().updateChildValues(values) { (error, ref) in
         }
     }
 }

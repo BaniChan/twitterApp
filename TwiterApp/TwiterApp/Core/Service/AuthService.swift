@@ -10,8 +10,8 @@ import FirebaseAuth
 protocol AuthServiceProtocol {
     func currentUser() -> User?
     func createUser(email: String, password: String, completion: ((AuthDataResult?, Error?) -> Void)?)
-    func signIn(email: String, password: String, completion: ((AuthDataResult?, Error?) -> Void)?)
-    func signOut() throws
+    func login(email: String, password: String, completion: ((AuthDataResult?, Error?) -> Void)?)
+    func logout() throws
     func setDisplayName(_ displayName: String)
 }
 
@@ -24,11 +24,11 @@ class AuthService: AuthServiceProtocol {
         Auth.auth().createUser(withEmail: email, password: password, completion: completion)
     }
     
-    func signIn(email: String, password: String, completion: ((AuthDataResult?, Error?) -> Void)?) {
+    func login(email: String, password: String, completion: ((AuthDataResult?, Error?) -> Void)?) {
         Auth.auth().signIn(withEmail: email, password: password, completion: completion)
     }
     
-    func signOut() throws {
+    func logout() throws {
         try? Auth.auth().signOut()
     }
     

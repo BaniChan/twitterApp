@@ -1,5 +1,5 @@
 //
-//  DBRepository.swift
+//  PostRepository.swift
 //  TwiterApp
 //
 //  Created by Bani Chan on 2023/2/17.
@@ -8,11 +8,11 @@
 import FirebaseAuth
 import Resolver
 
-protocol DBRepositoryProtocol {
+protocol PostRepositoryProtocol {
     func postTweet(content: String, photo: String, completion: @escaping (Error?) -> Void)
 }
 
-class DBRepository: DBRepositoryProtocol {
+class PostRepository: PostRepositoryProtocol {
     @Injected private var authService: AuthServiceProtocol
     @Injected private var dbService: DBServiceProtocol
     

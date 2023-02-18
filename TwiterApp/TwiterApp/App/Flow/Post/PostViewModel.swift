@@ -18,7 +18,7 @@ protocol PostViewModelOutput {
 class PostViewModel {
     typealias ViewController = PostViewModelOutput
     
-    @Injected private var dbRepository: DBRepositoryProtocol
+    @Injected private var PostRepository: PostRepositoryProtocol
     
     var viewController: ViewController?
     var selectedImage: UIImage?

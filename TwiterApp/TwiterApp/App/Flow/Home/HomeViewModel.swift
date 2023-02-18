@@ -34,7 +34,7 @@ class HomeViewModel {
     }
     
     func logout() {
-        try? authRepository.signOut()
+        try? authRepository.logout()
         logoutCallback()
     }
 }

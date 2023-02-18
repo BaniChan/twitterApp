@@ -69,7 +69,7 @@ class LoginViewModel {
         guard let email = viewController?.email,
               let password = viewController?.password else { return }
         viewController?.showLoading(true)
-        authRepository.signIn(email: email, password: password) { [weak self] result, error in
+        authRepository.login(email: email, password: password) { [weak self] result, error in
             self?.viewController?.showLoading(false)
             guard result != nil else {
                 self?.viewController?.showError(error?.localizedDescription)

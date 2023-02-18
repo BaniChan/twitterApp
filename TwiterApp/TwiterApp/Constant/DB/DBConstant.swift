@@ -9,12 +9,12 @@ import Foundation
 
 struct DBConstant {
     // Table
-    static let Tweet = "Tweet"
-    static let UserTweet = "User-Tweet"
+    static let Post = "Post"
+    static let UserTPost = "User-Post"
     
     // Key
-    static let TweetUser = "user"
-    static let TweetContent = "content"
-    static let TweetPhoto = "photo"
-    static let TweetTimestamp = "timestamp"
+    static let PostUser = "user"
+    static let PostContent = "content"
+    static let PostPhoto = "photo"
+    static let PostTimestamp = "timestamp"
 }

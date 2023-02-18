@@ -11,7 +11,7 @@ import Resolver
 extension Resolver: ResolverRegistering {
     public static func registerAllServices() {
         //repository (scope: application)
-        register { DBRepository() as DBRepositoryProtocol }.scope(.application)
+        register { PostRepository() as PostRepositoryProtocol }.scope(.application)
         
         //repository (scope: share)
         register { AuthRepository() as AuthRepositoryProtocol }.scope(.shared)

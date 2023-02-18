@@ -15,8 +15,8 @@ protocol AuthRepositoryProtocol {
         email: String,
         password: String,
         completion: ((AuthDataResult?, Error?) -> Void)?)
-    func signIn(email: String, password: String, completion: ((AuthDataResult?, Error?) -> Void)?)
-    func signOut() throws
+    func login(email: String, password: String, completion: ((AuthDataResult?, Error?) -> Void)?)
+    func logout() throws
 }
 
 class AuthRepository: AuthRepositoryProtocol {
@@ -39,12 +39,12 @@ class AuthRepository: AuthRepositoryProtocol {
             }
     }
     
-    func signIn(email: String, password: String, completion: ((AuthDataResult?, Error?) -> Void)?) {
-        authService.signIn(email: email, password: password, completion: completion)
+    func login(email: String, password: String, completion: ((AuthDataResult?, Error?) -> Void)?) {
+        authService.login(email: email, password: password, completion: completion)
     }
     
-    func signOut() throws {
-        try? authService.signOut()
+    func logout() throws {
+        try? authService.logout()
     }
     
     private func setDisplayName(_ displayName: String) {

@@ -46,10 +46,11 @@
 		31D1EA69299F9C5700DFDCCD /* DBConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D1EA68299F9C5700DFDCCD /* DBConstant.swift */; };
 		31D1EA6C299F9D6B00DFDCCD /* StorageConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D1EA6B299F9D6B00DFDCCD /* StorageConstant.swift */; };
 		31D1EA6E299F9E3100DFDCCD /* DBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D1EA6D299F9E3100DFDCCD /* DBService.swift */; };
-		31D1EA72299FA1D800DFDCCD /* DBRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D1EA71299FA1D800DFDCCD /* DBRepository.swift */; };
+		31D1EA72299FA1D800DFDCCD /* PostRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D1EA71299FA1D800DFDCCD /* PostRepository.swift */; };
 		31D1EA76299FA5D700DFDCCD /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D1EA75299FA5D700DFDCCD /* PostViewController.swift */; };
 		31D1EA79299FA5E200DFDCCD /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D1EA78299FA5E200DFDCCD /* PostViewModel.swift */; };
 		31D1EA7B299FC8BF00DFDCCD /* CustomTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D1EA7A299FC8BF00DFDCCD /* CustomTextView.swift */; };
+		31D1EA7F29A04C4400DFDCCD /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D1EA7E29A04C4400DFDCCD /* UIImage+Extension.swift */; };
 		31FEBDBE299F69D900D8BB95 /* RswiftLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = 31FEBDBD299F69D900D8BB95 /* RswiftLibrary */; };
 		31FEBDC8299F6F6C00D8BB95 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FEBDC7299F6F6C00D8BB95 /* WelcomeViewController.swift */; };
 		31FEBDCB299F6F8900D8BB95 /* WelcomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FEBDCA299F6F8900D8BB95 /* WelcomeViewModel.swift */; };
@@ -98,10 +99,11 @@
 		31D1EA68299F9C5700DFDCCD /* DBConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBConstant.swift; sourceTree = "<group>"; };
 		31D1EA6B299F9D6B00DFDCCD /* StorageConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageConstant.swift; sourceTree = "<group>"; };
 		31D1EA6D299F9E3100DFDCCD /* DBService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBService.swift; sourceTree = "<group>"; };
-		31D1EA71299FA1D800DFDCCD /* DBRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBRepository.swift; sourceTree = "<group>"; };
+		31D1EA71299FA1D800DFDCCD /* PostRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRepository.swift; sourceTree = "<group>"; };
 		31D1EA75299FA5D700DFDCCD /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		31D1EA78299FA5E200DFDCCD /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
 		31D1EA7A299FC8BF00DFDCCD /* CustomTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextView.swift; sourceTree = "<group>"; };
+		31D1EA7E29A04C4400DFDCCD /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		31FEBDC7299F6F6C00D8BB95 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		31FEBDCA299F6F8900D8BB95 /* WelcomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -196,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				310F0E50299F564D0097CA71 /* String+Extenstion.swift */,
+				31D1EA7E29A04C4400DFDCCD /* UIImage+Extension.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -213,7 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				316097A3299E0B6700B31C96 /* AuthRepository.swift */,
-				31D1EA71299FA1D800DFDCCD /* DBRepository.swift */,
+				31D1EA71299FA1D800DFDCCD /* PostRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -527,7 +530,8 @@
 				31D1EA7B299FC8BF00DFDCCD /* CustomTextView.swift in Sources */,
 				310F0E3B299E4FA30097CA71 /* LayoutConstant.swift in Sources */,
 				3109FC1A299CB71900A256CE /* BaseNaviViewController.swift in Sources */,
-				31D1EA72299FA1D800DFDCCD /* DBRepository.swift in Sources */,
+				31D1EA72299FA1D800DFDCCD /* PostRepository.swift in Sources */,
+				31D1EA7F29A04C4400DFDCCD /* UIImage+Extension.swift in Sources */,
 				310F0E47299E66520097CA71 /* CustomButton.swift in Sources */,
 				310F0E51299F564D0097CA71 /* String+Extenstion.swift in Sources */,
 			);
