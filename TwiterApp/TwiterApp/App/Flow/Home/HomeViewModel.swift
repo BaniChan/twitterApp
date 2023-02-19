@@ -23,7 +23,7 @@ class HomeViewModel {
     @Injected private var authRepository: AuthRepositoryProtocol
     @Injected private var postRepository: PostRepositoryProtocol
     
-    private static let TweetPagingCount = 10
+    private static let TweetPagingCount = 20
     var viewController: ViewController?
     private let logoutCallback: () -> Void
     private var hasMoreTweet = true
@@ -75,6 +75,11 @@ class HomeViewModel {
     func logout() {
         try? authRepository.logout()
         logoutCallback()
+    }
+    
+    func canDelete(index: Int) -> Bool {
+        guard let currentUserId = authRepository.currentUser?.uid else { return false }
+        return currentUserId == tweetData[index].userId
     }
     
     func deleteTweet(by index: Int) {

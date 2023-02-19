@@ -13,6 +13,7 @@ class TweetCell: UITableViewCell {
     
     private var photoWidthConstraint: NSLayoutConstraint?
     private var photoHeightConstraint: NSLayoutConstraint?
+    private var deleteCallback: (() -> Void)?
     
     private lazy var accountLogo = CustomImageView.accountIcon
 
@@ -63,6 +64,8 @@ class TweetCell: UITableViewCell {
         stackView.spacing = 20
         return stackView
     }()
+    
+    private lazy var deleteTweetButton = CustomButton.deleteTweetButton
  
     override init(style: CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -92,10 +95,18 @@ class TweetCell: UITableViewCell {
         
         contentView.addSubview(time)
         NSLayoutConstraint.activate([
-            time.widthAnchor.constraint(lessThanOrEqualToConstant: 100),
+            time.widthAnchor.constraint(lessThanOrEqualToConstant: 200),
             time.centerYAnchor.constraint(equalTo: userName.centerYAnchor),
             time.leadingAnchor.constraint(equalTo: userName.trailingAnchor)
         ])
+        
+        contentView.addSubview(deleteTweetButton)
+        deleteTweetButton.isHidden = true
+        NSLayoutConstraint.activate([
+            deleteTweetButton.centerYAnchor.constraint(equalTo: userName.centerYAnchor),
+            deleteTweetButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -15)
+        ])
+        deleteTweetButton.addTarget(self, action: #selector(clickDeleteTweetButton), for: .touchUpInside)
         
         contentView.addSubview(contentContainerView)
         NSLayoutConstraint.activate([
@@ -104,18 +115,20 @@ class TweetCell: UITableViewCell {
             contentContainerView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
             contentContainerView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20),
             content.leadingAnchor.constraint(equalTo: contentContainerView.leadingAnchor),
-            content.trailingAnchor.constraint(equalTo: contentContainerView.trailingAnchor),
-            photoImageView.leadingAnchor.constraint(equalTo: contentContainerView.leadingAnchor, constant: 10)
+            content.trailingAnchor.constraint(equalTo: contentContainerView.trailingAnchor)
         ])
+        
     }
     
-    func setData(tweet: Tweet) {
+    func setData(tweet: Tweet, canDelete: Bool, deleteCallback: (() -> Void)? = nil) {
         userName.text = tweet.userName
         time.text = "・" + Date(timeIntervalSince1970: Double(tweet.timestamp)).timeAgoDisplay()
         content.isHidden = tweet.content.isEmpty
         content.text = tweet.content
         content.sizeToFit()
-        setupPhotoHeightConstraints(width: tweet.imageWidth, height: tweet.imageHeight)
+        updateConstraints(photoWidth: tweet.imageWidth, photoHeight: tweet.imageHeight)
+        deleteTweetButton.isHidden = !canDelete
+        self.deleteCallback = deleteCallback
         guard !tweet.imageURL.isEmpty else {
             photoImageView.isHidden = true
             photoImageView.image = nil
@@ -125,12 +138,17 @@ class TweetCell: UITableViewCell {
         photoImageView.kf.setImage(with: URL(string: tweet.imageURL))
     }
     
-    private func setupPhotoHeightConstraints(width: Double, height: Double) {
+    @objc func clickDeleteTweetButton() {
+        deleteCallback?()
+    }
+    
+    private func updateConstraints(photoWidth: Double, photoHeight: Double) {
         photoWidthConstraint?.isActive = false
-        photoWidthConstraint = photoImageView.widthAnchor.constraint(equalToConstant: width)
+        photoWidthConstraint = photoImageView.widthAnchor.constraint(equalToConstant: photoWidth)
         photoWidthConstraint?.isActive = true
         photoHeightConstraint?.isActive = false
-        photoHeightConstraint = photoImageView.heightAnchor.constraint(equalToConstant: height)
+        photoHeightConstraint = photoImageView.heightAnchor.constraint(equalToConstant: photoHeight)
+        photoHeightConstraint?.priority = UILayoutPriority.init(999)
         photoHeightConstraint?.isActive = true
     }
 }

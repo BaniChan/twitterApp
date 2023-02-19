@@ -30,7 +30,7 @@ class PostViewController: UIViewController {
         label.textColor = R.color.secondaryInputText()
         label.text = R.string.localizable.whatSHappening()
         label.font = UIFont.systemFont(ofSize: 18)
-        label.heightAnchor.constraint(equalToConstant: 18).isActive = true
+        label.heightAnchor.constraint(equalToConstant: 20).isActive = true
         return label
     }()
     private lazy var displayName: UILabel = {
@@ -38,7 +38,7 @@ class PostViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = R.color.inputText()
         label.font = UIFont.systemFont(ofSize: 18)
-        label.heightAnchor.constraint(equalToConstant: 18).isActive = true
+        label.heightAnchor.constraint(equalToConstant: 20).isActive = true
         return label
     }()
     private lazy var loadingIndicator = CustomIndicatorView.loadingIndicator

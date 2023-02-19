@@ -42,6 +42,7 @@ class HomeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         viewModel.reloadTweet()
+        tableView.setContentOffset(CGPoint(x: 0.0, y: 0.0), animated: true)
     }
     
     func setupUI() {
@@ -97,8 +98,8 @@ class HomeViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(TweetCell.self, forCellReuseIdentifier: TweetCell.identifier)
+        tableView.estimatedRowHeight = 200
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = UITableView.automaticDimension
         tableView.addSubview(refreshControl)
     }
 }
@@ -160,13 +161,15 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: TweetCell.identifier, for: indexPath) as! TweetCell
-        cell.setData(tweet: viewModel.tweetData[indexPath.row])
+        cell.setData(tweet: viewModel.tweetData[indexPath.row],
+                     canDelete: viewModel.canDelete(index: indexPath.row)) { [weak self] in
+            self?.viewModel.deleteTweet(by: indexPath.row)
+        }
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        viewModel.deleteTweet(by: indexPath.row)
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {

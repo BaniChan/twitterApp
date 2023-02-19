@@ -81,4 +81,13 @@ struct CustomButton {
         button.heightAnchor.constraint(equalToConstant: 30).isActive = true
         return button
     }
+    
+    static var deleteTweetButton: UIButton {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setImage(R.image.icon_delete_tweet(), for: .normal)
+        button.widthAnchor.constraint(equalToConstant: 25).isActive = true
+        button.heightAnchor.constraint(equalToConstant: 25).isActive = true
+        return button
+    }
 }
