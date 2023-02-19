@@ -39,6 +39,7 @@ class HomeViewModel {
         postRepository.observeTweet(queryLimited: Self.TweetPagingCount) { [weak self] tweets in
             guard let self = self else { return }
             self.tweetData = tweets.reversed()
+            self.hasMoreTweet = true
         }
     }
     

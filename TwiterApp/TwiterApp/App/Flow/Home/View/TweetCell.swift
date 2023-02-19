@@ -69,6 +69,10 @@ class TweetCell: UITableViewCell {
         setupUI()
     }
     
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     private func setupUI() {
         backgroundColor = .clear
         contentView.layer.masksToBounds = true
@@ -128,9 +132,5 @@ class TweetCell: UITableViewCell {
         photoHeightConstraint?.isActive = false
         photoHeightConstraint = photoImageView.heightAnchor.constraint(equalToConstant: height)
         photoHeightConstraint?.isActive = true
-    }
- 
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 }

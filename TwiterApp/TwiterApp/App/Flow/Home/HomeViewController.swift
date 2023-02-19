@@ -126,6 +126,9 @@ extension HomeViewController: HomeViewModelOutput {
 }
 
 extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
+    // for load more could try UITableViewDataSourcePrefetching
+    // could use diffable datasource for mutating timeline data
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         viewModel.tweetData.count
     }
@@ -138,5 +141,10 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        guard indexPath.row == viewModel.tweetData.count - 1 else { return }
+        viewModel.loadMoreTweet()
     }
 }
