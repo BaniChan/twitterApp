@@ -13,6 +13,8 @@ protocol HomeViewModelOutput {
     func showPostView()
     func reloadTable()
     func endReloadTable()
+    func showLoading(_ show: Bool)
+    func showError(_ error: String?)
 }
 
 class HomeViewModel {
@@ -25,6 +27,7 @@ class HomeViewModel {
     var viewController: ViewController?
     private let logoutCallback: () -> Void
     private var hasMoreTweet = true
+    private var isLoading = false
     var tweetData = [Tweet]() {
         didSet {
             reloadTable()
@@ -60,15 +63,38 @@ class HomeViewModel {
     }
     
     @objc func clickLogoutButton() {
+        guard !isLoading else { return }
         viewController?.showLogoutAlert()
     }
     
     @objc func clickPostButton() {
+        guard !isLoading else { return }
         viewController?.showPostView()
     }
     
     func logout() {
         try? authRepository.logout()
         logoutCallback()
+    }
+    
+    func deleteTweet(by index: Int) {
+        guard !isLoading else { return }
+        
+        showLoading(true)
+        let tweet = tweetData[index]
+        postRepository.deleteTweet(tweet) { [weak self] error in
+            self?.showLoading(false)
+            guard error == nil else {
+                self?.viewController?.showError(error?.localizedDescription)
+                return
+            }
+    
+            self?.tweetData.remove(at: index)
+        }
+    }
+    
+    private func showLoading(_ show: Bool) {
+        isLoading = show
+        viewController?.showLoading(show)
     }
 }

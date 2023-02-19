@@ -64,7 +64,7 @@ class PostViewModel {
         !(viewController?.content ?? "").isEmpty || selectedImage != nil
     }
     
-    func showLoading(_ show: Bool) {
+    private func showLoading(_ show: Bool) {
         isLoading = show
         viewController?.showLoading(show)
     }

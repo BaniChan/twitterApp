@@ -11,6 +11,7 @@ protocol DBServiceProtocol {
     func postTweet(_ tweet: Tweet, completion: @escaping (Error?) -> Void)
     func observeTweet(queryLimited: Int, completion: @escaping ([Tweet]) -> Void)
     func observeTweetMore(queryLimited: Int, beforeValue: String, completion: @escaping ([Tweet]) -> Void)
+    func deleteTweet(key: String, completion: @escaping (Error?) -> Void)
 }
 
 class DBService: DBServiceProtocol {
@@ -48,5 +49,13 @@ class DBService: DBServiceProtocol {
                 }
                 completion(tweets)
             })
+    }
+    
+    func deleteTweet(key: String, completion: @escaping (Error?) -> Void) {
+        db.child(DBConstant.Post)
+            .child(key)
+            .removeValue() { error, _ in
+                completion(error)
+            }
     }
 }

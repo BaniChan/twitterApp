@@ -13,6 +13,7 @@ protocol PostRepositoryProtocol {
     func postTweet(content: String?, image: UIImage?, scaledImage: UIImage?, completion: @escaping (Error?) -> Void)
     func observeTweet(queryLimited: Int, completion: @escaping([Tweet]) -> Void)
     func observeTweetMore(queryLimited: Int, beforeValue: String, completion: @escaping ([Tweet]) -> Void)
+    func deleteTweet(_ tweet: Tweet, completion: @escaping (Error?) -> Void)
 }
 
 class PostRepository: PostRepositoryProtocol {
@@ -49,5 +50,27 @@ class PostRepository: PostRepositoryProtocol {
     
     func observeTweetMore(queryLimited: Int, beforeValue: String, completion: @escaping ([Tweet]) -> Void) {
         dbService.observeTweetMore(queryLimited: queryLimited, beforeValue: beforeValue, completion: completion)
+    }
+    
+    func deleteTweet(_ tweet: Tweet, completion: @escaping (Error?) -> Void) {
+        guard !tweet.imageURL.isEmpty else {
+            deleteTweetContent(by: tweet.key, completion: completion)
+            return
+        }
+        deleteTweetPhoto(by: tweet.imageURL) { [weak self] error in
+            guard error == nil else {
+                completion(error)
+                return
+            }
+            self?.deleteTweetContent(by: tweet.key, completion: completion)
+        }
+    }
+    
+    private func deleteTweetPhoto(by url: String, completion: @escaping (Error?) -> Void) {
+        storageService.deleteImage(by: url, completion: completion)
+    }
+    
+    private func deleteTweetContent(by key: String, completion: @escaping (Error?) -> Void) {
+        dbService.deleteTweet(key: key, completion: completion)
     }
 }

@@ -21,6 +21,7 @@ class HomeViewController: UIViewController {
     }()
     private let refreshControl = UIRefreshControl()
     private lazy var topSeparator = CustomView.separator
+    private lazy var loadingIndicator = CustomIndicatorView.loadingIndicator
     
     init(viewModel: ViewModel) {
         self.viewModel = viewModel
@@ -83,6 +84,12 @@ class HomeViewController: UIViewController {
             addPostButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50)
         ])
         addPostButton.addTarget(viewModel, action: #selector(viewModel.clickPostButton), for: .touchUpInside)
+        
+        view.addSubview(loadingIndicator)
+        NSLayoutConstraint.activate([
+            loadingIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            loadingIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        ])
     }
     
     private func setupTableView() {
@@ -123,6 +130,24 @@ extension HomeViewController: HomeViewModelOutput {
     func endReloadTable() {
         refreshControl.endRefreshing()
     }
+    
+    func showLoading(_ show: Bool) {
+        if show {
+            loadingIndicator.startAnimating()
+        } else {
+            loadingIndicator.stopAnimating()
+        }
+    }
+    
+    func showError(_ error: String?) {
+        guard let error = error else { return }
+        let alert = UIAlertController(
+            title: R.string.localizable.somethingWrong(),
+            message: error.description,
+            preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: R.string.localizable.confirm(), style: UIAlertAction.Style.default))
+        present(alert, animated: true, completion: nil)
+    }
 }
 
 extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
@@ -141,6 +166,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        viewModel.deleteTweet(by: indexPath.row)
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {

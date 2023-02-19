@@ -11,6 +11,7 @@ import UIKit
 
 protocol StorageServiceProtocol {
     func uploadImage(image: UIImage, completion: @escaping (URL?, Error?) -> Void)
+    func deleteImage(by imageUrl: String, completion: @escaping (Error?) -> Void)
 }
 
 class StorageService: StorageServiceProtocol {
@@ -34,6 +35,13 @@ class StorageService: StorageServiceProtocol {
     private func downloadURL(_ ref: StorageReference, completion: @escaping (URL?, Error?) -> Void) {
         ref.downloadURL { (url, error) in
             completion(url, error)
+        }
+    }
+    
+    func deleteImage(by url: String, completion: @escaping (Error?) -> Void) {
+        let ref = Storage.storage().reference(forURL: url)
+        ref.delete { error in
+            completion(error)
         }
     }
 }
