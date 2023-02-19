@@ -23,10 +23,10 @@ struct CustomButton {
         return button
     }
     
-    static var accountButton: UIButton {
+    static var logoutButton: UIButton {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setImage(R.image.icon_account(), for: .normal)
+        button.setImage(R.image.icon_logout(), for: .normal)
         button.widthAnchor.constraint(equalToConstant: 30).isActive = true
         button.heightAnchor.constraint(equalToConstant: 30).isActive = true
         return button

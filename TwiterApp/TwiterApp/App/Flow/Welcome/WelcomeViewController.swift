@@ -12,9 +12,9 @@ class WelcomeViewController: UIViewController {
     typealias LoginSuccessCallback = () -> Void
     
     private let viewModel: ViewModel
-    private let topIcon = CustomImageView.smallIcon
-    private let mainTitle = CustomLabel.welcomTitle
-    private let createAccountButton = CustomButton.defaultButton(R.string.localizable.createAccount(), enable: true)
+    private lazy var topIcon = CustomImageView.smallIcon
+    private lazy var mainTitle = CustomLabel.welcomTitle
+    private lazy var createAccountButton = CustomButton.defaultButton(R.string.localizable.createAccount(), enable: true)
     
     init(viewModel: ViewModel) {
         self.viewModel = viewModel

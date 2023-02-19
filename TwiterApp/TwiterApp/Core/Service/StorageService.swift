@@ -10,17 +10,13 @@ import Foundation
 import UIKit
 
 protocol StorageServiceProtocol {
-    func uploadImage(image: UIImage, userId: String, completion: @escaping (URL?, Error?) -> Void)
+    func uploadImage(image: UIImage, completion: @escaping (URL?, Error?) -> Void)
 }
 
 class StorageService: StorageServiceProtocol {
-    let storage: StorageReference
+    lazy var storage = Storage.storage().reference()
     
-    init() {
-        storage = Storage.storage().reference()
-    }
-    
-    func uploadImage(image: UIImage, userId: String, completion: @escaping (URL?, Error?) -> Void) {
+    func uploadImage(image: UIImage, completion: @escaping (URL?, Error?) -> Void) {
         guard let imageData = image.jpegData(compressionQuality: 0.5) else { return }
         let filename = NSUUID().uuidString
         let ref = storage.child(StorageConstant.PostImage).child(filename)

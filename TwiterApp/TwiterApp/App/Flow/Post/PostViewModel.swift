@@ -22,10 +22,12 @@ class PostViewModel {
     typealias ViewController = PostViewModelOutput
     
     @Injected private var postRepository: PostRepositoryProtocol
-    private var isLoading = false
+    @Injected private var authRepository: AuthRepositoryProtocol
     
+    private var isLoading = false
     var viewController: ViewController?
     var selectedImage: UIImage?
+    var scaledImage: UIImage?
     
     @objc func clickCancelButton() {
         viewController?.dismiss()
@@ -36,7 +38,8 @@ class PostViewModel {
         showLoading(true)
         postRepository.postTweet(
             content: viewController?.content,
-            image: selectedImage) { [weak self] error in
+            image: selectedImage,
+            scaledImage: scaledImage) { [weak self] error in
                 self?.showLoading(false)
                 guard error == nil else {
                     self?.viewController?.showError(error?.localizedDescription)
@@ -64,5 +67,9 @@ class PostViewModel {
     func showLoading(_ show: Bool) {
         isLoading = show
         viewController?.showLoading(show)
+    }
+    
+    var userDisplayName: String {
+        authRepository.currentUser?.displayName ?? ""
     }
 }

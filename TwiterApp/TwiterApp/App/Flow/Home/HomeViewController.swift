@@ -11,9 +11,16 @@ class HomeViewController: UIViewController {
     typealias ViewModel = HomeViewModel
     
     private let viewModel: ViewModel
-    private let topIcon = CustomImageView.smallIcon
-    private let accountButton = CustomButton.accountButton
-    private let addPostButton = CustomButton.addPostButton
+    private lazy var topIcon = CustomImageView.smallIcon
+    private lazy var logoutButton = CustomButton.logoutButton
+    private lazy var addPostButton = CustomButton.addPostButton
+    private lazy var tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        return tableView
+    }()
+    private let refreshControl = UIRefreshControl()
+    private lazy var topSeparator = CustomView.separator
     
     init(viewModel: ViewModel) {
         self.viewModel = viewModel
@@ -27,7 +34,13 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupTableView()
         setupUI()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel.reloadTweet()
     }
     
     func setupUI() {
@@ -40,12 +53,29 @@ class HomeViewController: UIViewController {
             topIcon.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
 
-        view.addSubview(accountButton)
+        view.addSubview(logoutButton)
         NSLayoutConstraint.activate([
-            accountButton.centerYAnchor.constraint(equalTo: topIcon.centerYAnchor),
-            accountButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24)
+            logoutButton.centerYAnchor.constraint(equalTo: topIcon.centerYAnchor),
+            logoutButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24)
         ])
-        accountButton.addTarget(viewModel, action: #selector(viewModel.clickAccountButton), for: .touchUpInside)
+        logoutButton.addTarget(viewModel, action: #selector(viewModel.clickLogoutButton), for: .touchUpInside)
+        
+        view.addSubview(topSeparator)
+        NSLayoutConstraint.activate([
+            topSeparator.topAnchor.constraint(equalTo: topIcon.bottomAnchor),
+            topSeparator.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            topSeparator.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+        ])
+        
+        view.addSubview(tableView)
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: topSeparator.bottomAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+        ])
+        
+        refreshControl.addTarget(viewModel, action: #selector(viewModel.reloadTweet), for: .valueChanged)
         
         view.addSubview(addPostButton)
         NSLayoutConstraint.activate([
@@ -53,6 +83,16 @@ class HomeViewController: UIViewController {
             addPostButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50)
         ])
         addPostButton.addTarget(viewModel, action: #selector(viewModel.clickPostButton), for: .touchUpInside)
+    }
+    
+    private func setupTableView() {
+        tableView.backgroundColor = .clear
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(TweetCell.self, forCellReuseIdentifier: TweetCell.identifier)
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = UITableView.automaticDimension
+        tableView.addSubview(refreshControl)
     }
 }
 
@@ -74,5 +114,29 @@ extension HomeViewController: HomeViewModelOutput {
         let viewController = PostViewController(viewModel: viewModel)
         viewController.modalPresentationStyle = .fullScreen
         present(viewController, animated: true)
+    }
+    
+    func reloadTable() {
+        tableView.reloadData()
+    }
+    
+    func endReloadTable() {
+        refreshControl.endRefreshing()
+    }
+}
+
+extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        viewModel.tweetData.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: TweetCell.identifier, for: indexPath) as! TweetCell
+        cell.setData(tweet: viewModel.tweetData[indexPath.row])
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }

@@ -11,13 +11,13 @@ class LoginViewController: UIViewController {
     typealias ViewModel = LoginViewModel
     
     private let viewModel: ViewModel
-    private let topIcon = CustomImageView.smallIcon
-    private let mainTitle = CustomLabel.mainTitle(R.string.localizable.loginWithYourAccount())
-    private let emailTextField = CustomTextField.email
-    private let passwordTextField = CustomTextField.password
-    private let errorLabel = CustomLabel.error
-    private let loginButton = CustomButton.defaultButton(R.string.localizable.logIn())
-    private let loadingIndicator = CustomIndicatorView.loadingIndicator
+    private lazy var topIcon = CustomImageView.smallIcon
+    private lazy var mainTitle = CustomLabel.mainTitle(R.string.localizable.loginWithYourAccount())
+    private lazy var emailTextField = CustomTextField.email
+    private lazy var passwordTextField = CustomTextField.password
+    private lazy var errorLabel = CustomLabel.error
+    private lazy var loginButton = CustomButton.defaultButton(R.string.localizable.logIn())
+    private lazy var loadingIndicator = CustomIndicatorView.loadingIndicator
     
     init(viewModel: ViewModel) {
         self.viewModel = viewModel

@@ -9,12 +9,12 @@ import UIKit
 
 class PostViewController: UIViewController {
     typealias ViewModel = PostViewModel
-    private let cancelButton = CustomButton.cancelButton
-    private let postButton = CustomButton.postButton
-    private let accountIcon = CustomImageView.accountIcon
-    private let addImageButton = CustomButton.addImageButton
-    private let deleteImageButton = CustomButton.deleteButton
-    private let photoImageView: UIImageView = {
+    private lazy var cancelButton = CustomButton.cancelButton
+    private lazy var postButton = CustomButton.postButton
+    private lazy var accountIcon = CustomImageView.accountIcon
+    private lazy var addImageButton = CustomButton.addImageButton
+    private lazy var deleteImageButton = CustomButton.deleteButton
+    private lazy var photoImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
@@ -23,8 +23,8 @@ class PostViewController: UIViewController {
         imageView.isHidden = true
         return imageView
     }()
-    private let postContent = CustomTextView.postContent
-    private let placeholder: UILabel = {
+    private lazy var postContent = CustomTextView.postContent
+    private lazy var placeholder: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = R.color.secondaryInputText()
@@ -33,7 +33,15 @@ class PostViewController: UIViewController {
         label.heightAnchor.constraint(equalToConstant: 18).isActive = true
         return label
     }()
-    private let loadingIndicator = CustomIndicatorView.loadingIndicator
+    private lazy var displayName: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = R.color.inputText()
+        label.font = UIFont.systemFont(ofSize: 18)
+        label.heightAnchor.constraint(equalToConstant: 18).isActive = true
+        return label
+    }()
+    private lazy var loadingIndicator = CustomIndicatorView.loadingIndicator
     private let viewModel: ViewModel
     
     init(viewModel: ViewModel) {
@@ -79,6 +87,13 @@ class PostViewController: UIViewController {
             accountIcon.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24)
         ])
         
+        view.addSubview(displayName)
+        displayName.text = viewModel.userDisplayName
+        NSLayoutConstraint.activate([
+            displayName.centerYAnchor.constraint(equalTo: accountIcon.centerYAnchor),
+            displayName.leadingAnchor.constraint(equalTo: accountIcon.trailingAnchor, constant: 10)
+        ])
+        
         view.addSubview(accountIcon)
         NSLayoutConstraint.activate([
             accountIcon.topAnchor.constraint(equalTo: cancelButton.bottomAnchor, constant: 10),
@@ -110,8 +125,8 @@ class PostViewController: UIViewController {
         
         view.addSubview(photoImageView)
         NSLayoutConstraint.activate([
-            photoImageView.widthAnchor.constraint(lessThanOrEqualToConstant: 250),
-            photoImageView.heightAnchor.constraint(lessThanOrEqualToConstant: 400),
+            photoImageView.widthAnchor.constraint(lessThanOrEqualToConstant: PhotoConstant.displayWidth),
+            photoImageView.heightAnchor.constraint(lessThanOrEqualToConstant: PhotoConstant.displayHeight),
             photoImageView.topAnchor.constraint(equalTo: postContent.bottomAnchor, constant: 35),
             photoImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -39)
         ])
@@ -185,7 +200,8 @@ extension PostViewController: PostViewModelOutput {
     }
     
     func showImage(_ show: Bool) {
-        let scaledImage = viewModel.selectedImage?.resize(withSize: CGSize(width: 250, height: 400), contentMode: .contentAspectFit)
+        let scaledImage = viewModel.selectedImage?.resize(withSize: CGSize(width: PhotoConstant.displayWidth, height: PhotoConstant.displayHeight), contentMode: .contentAspectFit)
+        viewModel.scaledImage = scaledImage
         photoImageView.image = scaledImage
         photoImageView.sizeToFit()
         addImageButton.isHidden = show

@@ -10,6 +10,7 @@ import Resolver
 
 protocol AuthRepositoryProtocol {
     var loggedIn: Bool { get }
+    var currentUser: User? { get }
     func createUser(
         displayName: String,
         email: String,
@@ -21,6 +22,10 @@ protocol AuthRepositoryProtocol {
 
 class AuthRepository: AuthRepositoryProtocol {
     @Injected private var authService: AuthServiceProtocol
+    
+    var currentUser: User? {
+        Auth.auth().currentUser
+    }
     
     var loggedIn: Bool {
         Auth.auth().currentUser != nil

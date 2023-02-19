@@ -11,15 +11,15 @@ class CreateAccountViewController: UIViewController {
     typealias ViewModel = CreateAccountViewModel
     
     private let viewModel: ViewModel
-    private let topIcon = CustomImageView.smallIcon
-    private let mainTitle = CustomLabel.mainTitle(R.string.localizable.createYourAccount())
-    private let nameTextField = CustomTextField.name
-    private let emailTextField = CustomTextField.email
-    private let passwordTextField = CustomTextField.password
-    private let confirmPasswordTextField = CustomTextField.confirmPassword
-    private let errorLabel = CustomLabel.error
-    private let createButton = CustomButton.defaultButton(R.string.localizable.create())
-    private let loadingIndicator = CustomIndicatorView.loadingIndicator
+    private lazy var topIcon = CustomImageView.smallIcon
+    private lazy var mainTitle = CustomLabel.mainTitle(R.string.localizable.createYourAccount())
+    private lazy var nameTextField = CustomTextField.name
+    private lazy var emailTextField = CustomTextField.email
+    private lazy var passwordTextField = CustomTextField.password
+    private lazy var confirmPasswordTextField = CustomTextField.confirmPassword
+    private lazy var errorLabel = CustomLabel.error
+    private lazy var createButton = CustomButton.defaultButton(R.string.localizable.create())
+    private lazy var loadingIndicator = CustomIndicatorView.loadingIndicator
     
     private let inputFieldVPadding: CGFloat = 30
     

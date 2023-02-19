@@ -14,8 +14,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
         FirebaseApp.configure()
+        Database.database().isPersistenceEnabled = true
+        
         let frame = UIScreen.main.bounds
         window = UIWindow(frame: frame)
         let navi = BaseNaviViewController(viewModel: BaseNaviViewModel())
