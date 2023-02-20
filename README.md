@@ -12,3 +12,5 @@ Twitter LITE version
 ## Run Tests
 run snapshot testings :
 - use iPhone 14 plus simulator
+
+overall converage rate is 72.8%

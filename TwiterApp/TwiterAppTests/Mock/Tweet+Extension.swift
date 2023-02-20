@@ -24,6 +24,6 @@ extension Tweet {
         let tweet5 = Tweet(content: "tweet5", imageURL: nil, imageWidth: 0, imageHeight: 0, userId: "user id 0", userName: "User 0", timestamp: 0)
         let tweet6 = Tweet(content: "tweet6", imageURL: nil, imageWidth: 0, imageHeight: 0, userId: "user id 0", userName: "User 0", timestamp: 0)
         
-        return [tweet4, tweet5, tweet4]
+        return [tweet6, tweet5, tweet4]
     }
 }
