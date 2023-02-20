@@ -5,7 +5,6 @@
 //  Created by Bani Chan on 2023/2/17.
 //
 
-import FirebaseAuth
 import Resolver
 import UIKit
 
@@ -40,7 +39,7 @@ class PostRepository: PostRepositoryProtocol {
         guard let user = authService.currentUser() else { return }
         let imageWidth = Double(scaledImage?.size.width ?? 0.0)
         let imageHeight = Double(scaledImage?.size.height ?? 0.0)
-        let tweet = Tweet(content: content, imageURL: imageURL, imageWidth: imageWidth, imageHeight: imageHeight, userId: user.uid, userName: user.displayName ?? "")
+        let tweet = Tweet(content: content, imageURL: imageURL, imageWidth: imageWidth, imageHeight: imageHeight, userId: user.userId, userName: user.displayName)
         dbService.postTweet(tweet, completion: completion)
     }
     
@@ -53,16 +52,14 @@ class PostRepository: PostRepositoryProtocol {
     }
     
     func deleteTweet(_ tweet: Tweet, completion: @escaping (Error?) -> Void) {
-        guard !tweet.imageURL.isEmpty else {
-            deleteTweetContent(by: tweet.key, completion: completion)
-            return
-        }
-        deleteTweetPhoto(by: tweet.imageURL) { [weak self] error in
-            guard error == nil else {
+        deleteTweetContent(by: tweet.key) { [weak self] error in
+            guard !tweet.imageURL.isEmpty,
+                  error == nil else {
                 completion(error)
                 return
             }
-            self?.deleteTweetContent(by: tweet.key, completion: completion)
+            // maybe ignore error for imge deletion failed
+            self?.deleteTweetPhoto(by: tweet.imageURL, completion: completion)
         }
     }
     

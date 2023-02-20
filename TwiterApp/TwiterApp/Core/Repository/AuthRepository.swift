@@ -5,7 +5,6 @@
 //  Created by Bani Chan on 2023/2/16.
 //
 
-import FirebaseAuth
 import Resolver
 
 protocol AuthRepositoryProtocol {
@@ -25,15 +24,15 @@ class AuthRepository: AuthRepositoryProtocol {
     @Injected private var authService: AuthServiceProtocol
     
     var displayName: String? {
-        Auth.auth().currentUser?.displayName
+        authService.currentUser()?.displayName
     }
     
     var userId: String? {
-        Auth.auth().currentUser?.uid
+        authService.currentUser()?.userId
     }
     
     var loggedIn: Bool {
-        Auth.auth().currentUser != nil
+        authService.currentUser() != nil
     }
     
     func createUser(
@@ -43,16 +42,14 @@ class AuthRepository: AuthRepositoryProtocol {
         completion: ((Bool, Error?) -> Void)?) {
             authService.createUser(
                 email: email,
-                password: password) { [weak self] result, error in
+                password: password) { [weak self] success, error in
                 self?.setDisplayName(displayName)
-                completion?(result != nil, error)
+                completion?(success, error)
             }
     }
     
     func login(email: String, password: String, completion: ((Bool, Error?) -> Void)?) {
-        authService.login(email: email, password: password) { result, error in
-            completion?(result != nil, error)
-        }
+        authService.login(email: email, password: password, completion: completion)
     }
     
     func logout() throws {

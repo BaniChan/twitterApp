@@ -51,6 +51,12 @@
 		31C41F3629A32904008F149D /* HomeViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C41F3529A32904008F149D /* HomeViewModelTest.swift */; };
 		31C41F3929A330F9008F149D /* Collection+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C41F3829A330F9008F149D /* Collection+Extension.swift */; };
 		31C41F3C29A336FC008F149D /* PostViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C41F3B29A336FC008F149D /* PostViewModelTest.swift */; };
+		31C41F3F29A3502A008F149D /* StringExtensionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C41F3E29A3502A008F149D /* StringExtensionTest.swift */; };
+		31C41F4229A351BE008F149D /* AuthRepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C41F4129A351BE008F149D /* AuthRepositoryTest.swift */; };
+		31C41F4729A35362008F149D /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C41F4629A35362008F149D /* UserData.swift */; };
+		31C41F4A29A3582E008F149D /* UserData+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C41F4929A3582E008F149D /* UserData+Extension.swift */; };
+		31C41F4D29A35C1F008F149D /* PostRepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C41F4C29A35C1F008F149D /* PostRepositoryTest.swift */; };
+		31C41F5029A35D9C008F149D /* AuthServiceProtocol+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C41F4F29A35D9C008F149D /* AuthServiceProtocol+Extension.swift */; };
 		31C675FC29A26CBB0059A0F5 /* WelcomeViewSnapshotTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C675FB29A26CBB0059A0F5 /* WelcomeViewSnapshotTest.swift */; };
 		31C675FF29A26D470059A0F5 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 31C675FE29A26D470059A0F5 /* SnapshotTesting */; };
 		31C6761529A26F900059A0F5 /* LoginViewSnapshotTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C6761429A26F900059A0F5 /* LoginViewSnapshotTest.swift */; };
@@ -127,6 +133,12 @@
 		31C41F3529A32904008F149D /* HomeViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTest.swift; sourceTree = "<group>"; };
 		31C41F3829A330F9008F149D /* Collection+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extension.swift"; sourceTree = "<group>"; };
 		31C41F3B29A336FC008F149D /* PostViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModelTest.swift; sourceTree = "<group>"; };
+		31C41F3E29A3502A008F149D /* StringExtensionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensionTest.swift; sourceTree = "<group>"; };
+		31C41F4129A351BE008F149D /* AuthRepositoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepositoryTest.swift; sourceTree = "<group>"; };
+		31C41F4629A35362008F149D /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		31C41F4929A3582E008F149D /* UserData+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserData+Extension.swift"; sourceTree = "<group>"; };
+		31C41F4C29A35C1F008F149D /* PostRepositoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRepositoryTest.swift; sourceTree = "<group>"; };
+		31C41F4F29A35D9C008F149D /* AuthServiceProtocol+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthServiceProtocol+Extension.swift"; sourceTree = "<group>"; };
 		31C675FB29A26CBB0059A0F5 /* WelcomeViewSnapshotTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewSnapshotTest.swift; sourceTree = "<group>"; };
 		31C6761429A26F900059A0F5 /* LoginViewSnapshotTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewSnapshotTest.swift; sourceTree = "<group>"; };
 		31C6761729A26FE30059A0F5 /* CreateAccountViewSnapshotTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewSnapshotTest.swift; sourceTree = "<group>"; };
@@ -181,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				31038EFF29A06F3A0005D7BA /* Tweet.swift */,
+				31C41F4629A35362008F149D /* UserData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -398,9 +411,11 @@
 		31C41F0A29A30686008F149D /* Mock */ = {
 			isa = PBXGroup;
 			children = (
+				31C41F4F29A35D9C008F149D /* AuthServiceProtocol+Extension.swift */,
 				31C41F0B29A306A6008F149D /* PostRepositoryProtocol+Extension.swift */,
 				31C41F0E29A30716008F149D /* AuthRepositoryProtocol+Extension.swift */,
 				31C41F1829A30B52008F149D /* Tweet+Extension.swift */,
+				31C41F4929A3582E008F149D /* UserData+Extension.swift */,
 			);
 			path = Mock;
 			sourceTree = "<group>";
@@ -475,6 +490,7 @@
 		31EE641D29A26945008E8B0D /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				31C41F3E29A3502A008F149D /* StringExtensionTest.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -482,6 +498,8 @@
 		31EE641E29A2694D008E8B0D /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				31C41F4129A351BE008F149D /* AuthRepositoryTest.swift */,
+				31C41F4C29A35C1F008F149D /* PostRepositoryTest.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -663,6 +681,7 @@
 				31FEBDCB299F6F8900D8BB95 /* WelcomeViewModel.swift in Sources */,
 				310F0E53299F58370097CA71 /* CustomIndicatorView.swift in Sources */,
 				310F0E4F299F48000097CA71 /* CreateAccountViewModel.swift in Sources */,
+				31C41F4729A35362008F149D /* UserData.swift in Sources */,
 				310F0E43299E5DE90097CA71 /* CustomLabel.swift in Sources */,
 				31D1EA76299FA5D700DFDCCD /* PostViewController.swift in Sources */,
 				31C41F3929A330F9008F149D /* Collection+Extension.swift in Sources */,
@@ -686,14 +705,19 @@
 				31C6762329A273C80059A0F5 /* Resolver+Extension.swift in Sources */,
 				31C41F1929A30B52008F149D /* Tweet+Extension.swift in Sources */,
 				31C6761529A26F900059A0F5 /* LoginViewSnapshotTest.swift in Sources */,
+				31C41F4229A351BE008F149D /* AuthRepositoryTest.swift in Sources */,
 				31C41F3629A32904008F149D /* HomeViewModelTest.swift in Sources */,
 				31C41F3C29A336FC008F149D /* PostViewModelTest.swift in Sources */,
 				31C41F2C29A31626008F149D /* WelcomeViewModelTest.swift in Sources */,
+				31C41F4A29A3582E008F149D /* UserData+Extension.swift in Sources */,
 				31C41F1629A30A56008F149D /* HomeViewSnapshotTest.swift in Sources */,
 				31C41F2829A313B9008F149D /* BaseNaviViewModelTest.swift in Sources */,
 				31C41F3329A32527008F149D /* CreateAccountViewModelTest.swift in Sources */,
 				31C6761B29A270890059A0F5 /* PostViewSnapshotTest.swift in Sources */,
 				31C41F0C29A306A6008F149D /* PostRepositoryProtocol+Extension.swift in Sources */,
+				31C41F4D29A35C1F008F149D /* PostRepositoryTest.swift in Sources */,
+				31C41F5029A35D9C008F149D /* AuthServiceProtocol+Extension.swift in Sources */,
+				31C41F3F29A3502A008F149D /* StringExtensionTest.swift in Sources */,
 				31C6761829A26FE30059A0F5 /* CreateAccountViewSnapshotTest.swift in Sources */,
 				31C41F2F29A3172C008F149D /* LoginViewModelTest.swift in Sources */,
 				31C41F2629A31158008F149D /* BaseNaviViewSnapshotTest.swift in Sources */,

@@ -8,7 +8,6 @@
 import Foundation
 import XCTest
 import Resolver
-import FirebaseAuth
 
 @testable import TwiterApp
 
@@ -94,6 +93,7 @@ final class CreateAccountViewModelTest: XCTestCase {
         XCTAssertFalse(outputMock.isEnableCreateButton)
         
         // create success
+        authRepository.createSuccess = true
         outputMock.nameInput = "user"
         outputMock.emailInput = "test@test.cc"
         outputMock.passwordInput = "123456"
@@ -160,14 +160,14 @@ final class CreateAccountViewModelTest: XCTestCase {
             case createError
         }
         
-        var createSuccess = true
+        var createSuccess = false
         
         func createUser(displayName: String, email: String, password: String, completion: ((Bool, Error?) -> Void)?) {
             guard createSuccess else {
-                completion?(false, AuthRepositoryError.createError)
+                completion?(createSuccess, AuthRepositoryError.createError)
                 return
             }
-            completion?(true, nil)
+            completion?(createSuccess, nil)
         }
     }
 }

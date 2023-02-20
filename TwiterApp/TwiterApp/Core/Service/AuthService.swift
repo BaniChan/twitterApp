@@ -8,24 +8,29 @@
 import FirebaseAuth
 
 protocol AuthServiceProtocol {
-    func currentUser() -> User?
-    func createUser(email: String, password: String, completion: ((AuthDataResult?, Error?) -> Void)?)
-    func login(email: String, password: String, completion: ((AuthDataResult?, Error?) -> Void)?)
+    func currentUser() -> UserData?
+    func createUser(email: String, password: String, completion: ((Bool, Error?) -> Void)?)
+    func login(email: String, password: String, completion: ((Bool, Error?) -> Void)?)
     func logout() throws
     func setDisplayName(_ displayName: String)
 }
 
 class AuthService: AuthServiceProtocol {
-    func currentUser() -> User? {
-        Auth.auth().currentUser
+    func currentUser() -> UserData? {
+        guard let currentUser = Auth.auth().currentUser else { return nil }
+        return UserData(currentUser)
     }
     
-    func createUser(email: String, password: String, completion: ((AuthDataResult?, Error?) -> Void)?) {
-        Auth.auth().createUser(withEmail: email, password: password, completion: completion)
+    func createUser(email: String, password: String, completion: ((Bool, Error?) -> Void)?) {
+        Auth.auth().createUser(withEmail: email, password: password) { result, error in
+            completion?(result != nil, error)
+        }
     }
     
-    func login(email: String, password: String, completion: ((AuthDataResult?, Error?) -> Void)?) {
-        Auth.auth().signIn(withEmail: email, password: password, completion: completion)
+    func login(email: String, password: String, completion: ((Bool, Error?) -> Void)?) {
+        Auth.auth().signIn(withEmail: email, password: password) { result, error in
+            completion?(result != nil, error)
+        }
     }
     
     func logout() throws {

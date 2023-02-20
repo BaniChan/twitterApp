@@ -8,7 +8,6 @@
 import Foundation
 import XCTest
 import Resolver
-import FirebaseAuth
 
 @testable import TwiterApp
 
@@ -77,6 +76,7 @@ final class HomeViewModelTest: XCTestCase {
         var dataCount = viewModel.tweetData.count
 
         // test delete tweet success
+        postRepositoryMock.deleteSuccess = true
         viewModel.deleteTweet(by: 1)
         dataCount -= 1
         XCTAssertEqual(viewModel.tweetData.count, dataCount)
@@ -144,7 +144,7 @@ final class HomeViewModelTest: XCTestCase {
         enum PostRepositoryError: Error {
             case deleteError
         }
-        var deleteSuccess = true
+        var deleteSuccess = false
         
         func observeTweet(queryLimited: Int, completion: @escaping([Tweet]) -> Void) {
             let tweets = Tweet.mockTweets

@@ -8,7 +8,6 @@
 import Foundation
 import XCTest
 import Resolver
-import FirebaseAuth
 
 @testable import TwiterApp
 
@@ -134,7 +133,7 @@ final class PostViewModelTest: XCTestCase {
             case postError
         }
     
-        var postSuccess = true
+        var postSuccess = false
         
         func postTweet(content: String?, image: UIImage?, scaledImage: UIImage?, completion: @escaping (Error?) -> Void) {
             guard postSuccess else {

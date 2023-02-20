@@ -8,7 +8,6 @@
 import Foundation
 import XCTest
 import Resolver
-import FirebaseAuth
 
 @testable import TwiterApp
 
@@ -59,6 +58,7 @@ final class LoginViewModelTest: XCTestCase {
         XCTAssertFalse(outputMock.isEnableLoginButton)
         
         // login success
+        authRepository.loginSuccess = true
         outputMock.emailInput = "test@test.cc"
         outputMock.passwordInput = "123456"
         viewModel.textFieldEditingChanged()
@@ -111,14 +111,14 @@ final class LoginViewModelTest: XCTestCase {
             case loginError
         }
         
-        var loginSuccess = true
+        var loginSuccess = false
         
         func login(email: String, password: String, completion: ((Bool, Error?) -> Void)?) {
             guard loginSuccess else {
-                completion?(false, AuthRepositoryError.loginError)
+                completion?(loginSuccess, AuthRepositoryError.loginError)
                 return
             }
-            completion?(true, nil)
+            completion?(loginSuccess, nil)
         }
     }
 }
