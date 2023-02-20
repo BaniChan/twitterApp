@@ -45,7 +45,7 @@ class WelcomeViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle(R.string.localizable.logIn(), for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 16)
-        button.setTitleColor(R.color.signUpLinkText(), for: .normal)
+        button.setTitleColor(R.color.loginLinkText(), for: .normal)
         button.heightAnchor.constraint(equalToConstant: 40).isActive = true
         return button
     }()
