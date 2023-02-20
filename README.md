@@ -7,7 +7,7 @@ Twitter LITE version
 - open the xCode project and wait for package download complete 
 - run the app
 
-(Tested by xCode 14.1)
+(Tested by xCode 14.1, iPhone 14 / 14 plus / 14 pro)
 
 ## Run Tests
 run snapshot testings :
