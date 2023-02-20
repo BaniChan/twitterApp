@@ -10,6 +10,9 @@ import Resolver
 
 extension Resolver: ResolverRegistering {
     public static func registerAllServices() {
+        // don't do injection for testing env
+        guard !AppDelegate.inUnitTest else { return }
+        
         //repository (scope: application)
         register { PostRepository() as PostRepositoryProtocol }.scope(.application)
         

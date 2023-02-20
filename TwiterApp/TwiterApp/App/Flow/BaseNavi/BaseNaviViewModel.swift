@@ -16,7 +16,7 @@ protocol BaseNaviViewModelOutput {
 class BaseNaviViewModel {
     typealias ViewController = BaseNaviViewModelOutput
     
-    @Injected private var authRepository: AuthRepositoryProtocol
+    @LazyInjected private var authRepository: AuthRepositoryProtocol
     
     var viewController: ViewController?
     

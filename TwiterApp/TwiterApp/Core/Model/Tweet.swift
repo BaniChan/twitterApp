@@ -24,7 +24,8 @@ struct Tweet {
         imageWidth: Double,
         imageHeight: Double,
         userId: String,
-        userName: String
+        userName: String,
+        timestamp: Int? = nil
     ) {
         self.key = ""
         self.content = content ?? ""
@@ -33,7 +34,7 @@ struct Tweet {
         self.imageHeight = imageHeight
         self.userId = userId
         self.userName = userName
-        self.timestamp = Int(NSDate().timeIntervalSince1970)
+        self.timestamp = timestamp ?? Int(NSDate().timeIntervalSince1970)
     }
     
     init(_ snapshot: DataSnapshot) {

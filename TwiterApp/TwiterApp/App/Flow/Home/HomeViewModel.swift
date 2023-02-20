@@ -20,8 +20,8 @@ protocol HomeViewModelOutput {
 class HomeViewModel {
     typealias ViewController = HomeViewModelOutput
     
-    @Injected private var authRepository: AuthRepositoryProtocol
-    @Injected private var postRepository: PostRepositoryProtocol
+    @LazyInjected private var authRepository: AuthRepositoryProtocol
+    @LazyInjected private var postRepository: PostRepositoryProtocol
     
     private static let TweetPagingCount = 20
     var viewController: ViewController?
@@ -78,7 +78,7 @@ class HomeViewModel {
     }
     
     func canDelete(index: Int) -> Bool {
-        guard let currentUserId = authRepository.currentUser?.uid else { return false }
+        guard let currentUserId = authRepository.userId else { return false }
         return currentUserId == tweetData[index].userId
     }
     

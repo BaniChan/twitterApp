@@ -35,7 +35,7 @@ class CreateAccountViewModel {
     
     typealias ViewController = CreateAccountViewModelOutput
     
-    @Injected private var authRepository: AuthRepositoryProtocol
+    @LazyInjected private var authRepository: AuthRepositoryProtocol
     
     var viewController: ViewController?
     private let createSuccessCallback: () -> Void

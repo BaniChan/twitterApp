@@ -24,7 +24,7 @@
       "location" : "https://github.com/firebase/firebase-ios-sdk",
       "state" : {
         "branch" : "master",
-        "revision" : "52f246ce87614f4ba4569d112972928995554204"
+        "revision" : "6d9f33435a81d07ba21017be8054e0ca57408fb4"
       }
     },
     {
@@ -68,8 +68,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/google/gtm-session-fetcher.git",
       "state" : {
-        "revision" : "5ccda3981422a84186387dbb763ba739178b529c",
-        "version" : "2.3.0"
+        "revision" : "96d7cc73a71ce950723aa3c50ce4fb275ae180b8",
+        "version" : "3.1.0"
       }
     },
     {
@@ -142,6 +142,15 @@
       "state" : {
         "revision" : "ab3a58b7209a17d781c0d1dbb3e1ff3da306bae8",
         "version" : "1.20.3"
+      }
+    },
+    {
+      "identity" : "swift-snapshot-testing",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/pointfreeco/swift-snapshot-testing.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "f5489a273ddd57239fd68b9889b3b541bdcbfa3a"
       }
     },
     {

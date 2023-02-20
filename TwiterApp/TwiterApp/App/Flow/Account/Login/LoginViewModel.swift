@@ -31,7 +31,7 @@ class LoginViewModel {
     
     typealias ViewController = LoginViewModelOutput
     
-    @Injected private var authRepository: AuthRepositoryProtocol
+    @LazyInjected private var authRepository: AuthRepositoryProtocol
     
     var viewController: ViewController?
     private let loginSuccessCallback: () -> Void

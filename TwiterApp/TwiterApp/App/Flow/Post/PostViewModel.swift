@@ -70,6 +70,6 @@ class PostViewModel {
     }
     
     var userDisplayName: String {
-        authRepository.currentUser?.displayName ?? ""
+        authRepository.displayName ?? ""
     }
 }
