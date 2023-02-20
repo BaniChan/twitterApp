@@ -12,7 +12,7 @@ import FirebaseAuth
 
 extension AuthRepositoryProtocol {
     var loggedIn: Bool {
-        true
+        false
     }
     
     var displayName: String? {
@@ -23,9 +23,9 @@ extension AuthRepositoryProtocol {
         "user id 0"
     }
     
-    func createUser(displayName: String, email: String, password: String, completion: ((AuthDataResult?, Error?) -> Void)?) {}
+    func createUser(displayName: String, email: String, password: String, completion: ((Bool, Error?) -> Void)?) {}
     
-    func login(email: String, password: String, completion: ((AuthDataResult?, Error?) -> Void)?) {}
+    func login(email: String, password: String, completion: ((Bool, Error?) -> Void)?) {}
     
     func logout() throws {}
 }

@@ -122,7 +122,14 @@ class TweetCell: UITableViewCell {
     
     func setData(tweet: Tweet, canDelete: Bool, deleteCallback: (() -> Void)? = nil) {
         userName.text = tweet.userName
-        time.text = "・" + Date(timeIntervalSince1970: Double(tweet.timestamp)).timeAgoDisplay()
+        
+        // use empty string for snapshot testing
+        if tweet.timestamp == 0 {
+            time.text = ""
+        } else {
+            time.text = "・" + Date(timeIntervalSince1970: Double(tweet.timestamp)).timeAgoDisplay()
+        }
+        
         content.isHidden = tweet.content.isEmpty
         content.text = tweet.content
         content.sizeToFit()

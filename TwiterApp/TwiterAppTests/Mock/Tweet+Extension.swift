@@ -11,11 +11,19 @@ import Foundation
 
 extension Tweet {
     static var mockTweets: [Tweet] {
-        let tweet0 = Tweet(content: "tweet0", imageURL: nil, imageWidth: 0, imageHeight: 0, userId: "user id 0", userName: "User 0", timestamp: 1676858852)
-        let tweet1 = Tweet(content: "tweet1", imageURL: nil, imageWidth: 0, imageHeight: 0, userId: "user id 1", userName: "User 1", timestamp: 1676858752)
-        let tweet2 = Tweet(content: "tweet2", imageURL: nil, imageWidth: 0, imageHeight: 0, userId: "user id 1", userName: "User 2", timestamp: 1676857652)
-        let tweet3 = Tweet(content: "tweet3", imageURL: nil, imageWidth: 0, imageHeight: 0, userId: "user id 0", userName: "User 3", timestamp: 1676658852)
+        let tweet0 = Tweet(content: "tweet0", imageURL: nil, imageWidth: 0, imageHeight: 0, userId: "user id 0", userName: "User 0", timestamp: 0)
+        let tweet1 = Tweet(content: "tweet1", imageURL: nil, imageWidth: 0, imageHeight: 0, userId: "user id 1", userName: "User 1", timestamp: 0)
+        let tweet2 = Tweet(content: "tweet2", imageURL: nil, imageWidth: 0, imageHeight: 0, userId: "user id 1", userName: "User 1", timestamp: 0)
+        let tweet3 = Tweet(content: "tweet3", imageURL: nil, imageWidth: 0, imageHeight: 0, userId: "user id 0", userName: "User 0", timestamp: 0)
         
-        return [tweet0, tweet1, tweet2, tweet3]
+        return [tweet3, tweet2, tweet1, tweet0]
+    }
+    
+    static var mockTweetsMore: [Tweet] {
+        let tweet4 = Tweet(content: "tweet4", imageURL: nil, imageWidth: 0, imageHeight: 0, userId: "user id 0", userName: "User 0", timestamp: 0)
+        let tweet5 = Tweet(content: "tweet5", imageURL: nil, imageWidth: 0, imageHeight: 0, userId: "user id 0", userName: "User 0", timestamp: 0)
+        let tweet6 = Tweet(content: "tweet6", imageURL: nil, imageWidth: 0, imageHeight: 0, userId: "user id 0", userName: "User 0", timestamp: 0)
+        
+        return [tweet4, tweet5, tweet4]
     }
 }

@@ -78,15 +78,16 @@ class HomeViewModel {
     }
     
     func canDelete(index: Int) -> Bool {
-        guard let currentUserId = authRepository.userId else { return false }
-        return currentUserId == tweetData[index].userId
+        guard let currentUserId = authRepository.userId,
+              let tweetUserId = tweetData[safe: index]?.userId else { return false }
+        return currentUserId == tweetUserId
     }
     
     func deleteTweet(by index: Int) {
-        guard !isLoading else { return }
+        guard !isLoading,
+              let tweet = tweetData[safe: index] else { return }
         
         showLoading(true)
-        let tweet = tweetData[index]
         postRepository.deleteTweet(tweet) { [weak self] error in
             self?.showLoading(false)
             guard error == nil else {

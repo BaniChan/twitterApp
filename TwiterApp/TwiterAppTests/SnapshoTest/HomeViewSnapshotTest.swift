@@ -1,5 +1,5 @@
 //
-//  HomeViewSnapshotTesting.swift
+//  HomeViewSnapshotTest.swift
 //  TwiterAppTests
 //
 //  Created by Bani Chan on 2023/2/20.
@@ -8,11 +8,10 @@
 import SnapshotTesting
 import XCTest
 import Resolver
-import FirebaseAuth
 
 @testable import TwiterApp
 
-final class HomeViewSnapshotTesting: XCTestCase {
+final class HomeViewSnapshotTest: XCTestCase {
     override func setUp() {
         Resolver.resetUnitTestRegistrations()
     }
@@ -20,6 +19,7 @@ final class HomeViewSnapshotTesting: XCTestCase {
     func testScreen() throws {
         Resolver.test.register { AuthRepositoryMock() as AuthRepositoryProtocol }
         Resolver.test.register { PostRepositoryMock() as PostRepositoryProtocol }
+        
         let viewModel = HomeViewModel(logoutCallback: {})
         let sut = HomeViewController(viewModel: viewModel)
 

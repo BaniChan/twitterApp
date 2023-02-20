@@ -85,9 +85,9 @@ class CreateAccountViewModel {
         authRepository.createUser(
             displayName: name,
             email: email,
-            password: password) { [weak self] result, error in
+            password: password) { [weak self] success, error in
                 self?.viewController?.showLoading(false)
-                guard result != nil else {
+                guard success else {
                     self?.viewController?.showError(error?.localizedDescription)
                     return
                 }

@@ -57,6 +57,7 @@ class PostViewModel {
     @objc func clickDeleteImageButton() {
         guard !isLoading else { return }
         selectedImage = nil
+        scaledImage = nil
         viewController?.showImage(false)
     }
     

@@ -38,11 +38,19 @@
 		319B8CBD29A12DD100356AEC /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319B8CBC29A12DD100356AEC /* Date+Extension.swift */; };
 		31C41F0C29A306A6008F149D /* PostRepositoryProtocol+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C41F0B29A306A6008F149D /* PostRepositoryProtocol+Extension.swift */; };
 		31C41F0F29A30716008F149D /* AuthRepositoryProtocol+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C41F0E29A30716008F149D /* AuthRepositoryProtocol+Extension.swift */; };
-		31C41F1629A30A56008F149D /* HomeViewSnapshotTesting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C41F1529A30A56008F149D /* HomeViewSnapshotTesting.swift */; };
+		31C41F1629A30A56008F149D /* HomeViewSnapshotTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C41F1529A30A56008F149D /* HomeViewSnapshotTest.swift */; };
 		31C41F1929A30B52008F149D /* Tweet+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C41F1829A30B52008F149D /* Tweet+Extension.swift */; };
 		31C41F1D29A30FA7008F149D /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 31C41F1C29A30FA7008F149D /* FirebaseAuth */; };
 		31C41F1F29A30FAB008F149D /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 31C41F1E29A30FAB008F149D /* FirebaseDatabase */; };
 		31C41F2129A30FB0008F149D /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 31C41F2029A30FB0008F149D /* FirebaseStorage */; };
+		31C41F2629A31158008F149D /* BaseNaviViewSnapshotTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C41F2529A31158008F149D /* BaseNaviViewSnapshotTest.swift */; };
+		31C41F2829A313B9008F149D /* BaseNaviViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C41F2729A313B9008F149D /* BaseNaviViewModelTest.swift */; };
+		31C41F2C29A31626008F149D /* WelcomeViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C41F2B29A31626008F149D /* WelcomeViewModelTest.swift */; };
+		31C41F2F29A3172C008F149D /* LoginViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C41F2E29A3172C008F149D /* LoginViewModelTest.swift */; };
+		31C41F3329A32527008F149D /* CreateAccountViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C41F3229A32527008F149D /* CreateAccountViewModelTest.swift */; };
+		31C41F3629A32904008F149D /* HomeViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C41F3529A32904008F149D /* HomeViewModelTest.swift */; };
+		31C41F3929A330F9008F149D /* Collection+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C41F3829A330F9008F149D /* Collection+Extension.swift */; };
+		31C41F3C29A336FC008F149D /* PostViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C41F3B29A336FC008F149D /* PostViewModelTest.swift */; };
 		31C675FC29A26CBB0059A0F5 /* WelcomeViewSnapshotTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C675FB29A26CBB0059A0F5 /* WelcomeViewSnapshotTest.swift */; };
 		31C675FF29A26D470059A0F5 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 31C675FE29A26D470059A0F5 /* SnapshotTesting */; };
 		31C6761529A26F900059A0F5 /* LoginViewSnapshotTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C6761429A26F900059A0F5 /* LoginViewSnapshotTest.swift */; };
@@ -109,8 +117,16 @@
 		319B8CBC29A12DD100356AEC /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		31C41F0B29A306A6008F149D /* PostRepositoryProtocol+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PostRepositoryProtocol+Extension.swift"; sourceTree = "<group>"; };
 		31C41F0E29A30716008F149D /* AuthRepositoryProtocol+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthRepositoryProtocol+Extension.swift"; sourceTree = "<group>"; };
-		31C41F1529A30A56008F149D /* HomeViewSnapshotTesting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewSnapshotTesting.swift; sourceTree = "<group>"; };
+		31C41F1529A30A56008F149D /* HomeViewSnapshotTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewSnapshotTest.swift; sourceTree = "<group>"; };
 		31C41F1829A30B52008F149D /* Tweet+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tweet+Extension.swift"; sourceTree = "<group>"; };
+		31C41F2529A31158008F149D /* BaseNaviViewSnapshotTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNaviViewSnapshotTest.swift; sourceTree = "<group>"; };
+		31C41F2729A313B9008F149D /* BaseNaviViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNaviViewModelTest.swift; sourceTree = "<group>"; };
+		31C41F2B29A31626008F149D /* WelcomeViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModelTest.swift; sourceTree = "<group>"; };
+		31C41F2E29A3172C008F149D /* LoginViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTest.swift; sourceTree = "<group>"; };
+		31C41F3229A32527008F149D /* CreateAccountViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewModelTest.swift; sourceTree = "<group>"; };
+		31C41F3529A32904008F149D /* HomeViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTest.swift; sourceTree = "<group>"; };
+		31C41F3829A330F9008F149D /* Collection+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extension.swift"; sourceTree = "<group>"; };
+		31C41F3B29A336FC008F149D /* PostViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModelTest.swift; sourceTree = "<group>"; };
 		31C675FB29A26CBB0059A0F5 /* WelcomeViewSnapshotTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewSnapshotTest.swift; sourceTree = "<group>"; };
 		31C6761429A26F900059A0F5 /* LoginViewSnapshotTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewSnapshotTest.swift; sourceTree = "<group>"; };
 		31C6761729A26FE30059A0F5 /* CreateAccountViewSnapshotTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewSnapshotTest.swift; sourceTree = "<group>"; };
@@ -236,6 +252,7 @@
 				310F0E50299F564D0097CA71 /* String+Extenstion.swift */,
 				31D1EA7E29A04C4400DFDCCD /* UIImage+Extension.swift */,
 				319B8CBC29A12DD100356AEC /* Date+Extension.swift */,
+				31C41F3829A330F9008F149D /* Collection+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -445,6 +462,12 @@
 		31EE641B29A26915008E8B0D /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				31C41F2729A313B9008F149D /* BaseNaviViewModelTest.swift */,
+				31C41F2B29A31626008F149D /* WelcomeViewModelTest.swift */,
+				31C41F2E29A3172C008F149D /* LoginViewModelTest.swift */,
+				31C41F3229A32527008F149D /* CreateAccountViewModelTest.swift */,
+				31C41F3529A32904008F149D /* HomeViewModelTest.swift */,
+				31C41F3B29A336FC008F149D /* PostViewModelTest.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -466,11 +489,12 @@
 		31EE642029A2696A008E8B0D /* SnapshoTest */ = {
 			isa = PBXGroup;
 			children = (
+				31C41F2529A31158008F149D /* BaseNaviViewSnapshotTest.swift */,
 				31C675FB29A26CBB0059A0F5 /* WelcomeViewSnapshotTest.swift */,
 				31C6761429A26F900059A0F5 /* LoginViewSnapshotTest.swift */,
 				31C6761729A26FE30059A0F5 /* CreateAccountViewSnapshotTest.swift */,
 				31C6761A29A270890059A0F5 /* PostViewSnapshotTest.swift */,
-				31C41F1529A30A56008F149D /* HomeViewSnapshotTesting.swift */,
+				31C41F1529A30A56008F149D /* HomeViewSnapshotTest.swift */,
 			);
 			path = SnapshoTest;
 			sourceTree = "<group>";
@@ -641,6 +665,7 @@
 				310F0E4F299F48000097CA71 /* CreateAccountViewModel.swift in Sources */,
 				310F0E43299E5DE90097CA71 /* CustomLabel.swift in Sources */,
 				31D1EA76299FA5D700DFDCCD /* PostViewController.swift in Sources */,
+				31C41F3929A330F9008F149D /* Collection+Extension.swift in Sources */,
 				310F0E4B299F124F0097CA71 /* CustomImageView.swift in Sources */,
 				310F0E49299F075A0097CA71 /* LoginViewModel.swift in Sources */,
 				316097A1299E0A5700B31C96 /* Resolver+Injection.swift in Sources */,
@@ -661,10 +686,17 @@
 				31C6762329A273C80059A0F5 /* Resolver+Extension.swift in Sources */,
 				31C41F1929A30B52008F149D /* Tweet+Extension.swift in Sources */,
 				31C6761529A26F900059A0F5 /* LoginViewSnapshotTest.swift in Sources */,
-				31C41F1629A30A56008F149D /* HomeViewSnapshotTesting.swift in Sources */,
+				31C41F3629A32904008F149D /* HomeViewModelTest.swift in Sources */,
+				31C41F3C29A336FC008F149D /* PostViewModelTest.swift in Sources */,
+				31C41F2C29A31626008F149D /* WelcomeViewModelTest.swift in Sources */,
+				31C41F1629A30A56008F149D /* HomeViewSnapshotTest.swift in Sources */,
+				31C41F2829A313B9008F149D /* BaseNaviViewModelTest.swift in Sources */,
+				31C41F3329A32527008F149D /* CreateAccountViewModelTest.swift in Sources */,
 				31C6761B29A270890059A0F5 /* PostViewSnapshotTest.swift in Sources */,
 				31C41F0C29A306A6008F149D /* PostRepositoryProtocol+Extension.swift in Sources */,
 				31C6761829A26FE30059A0F5 /* CreateAccountViewSnapshotTest.swift in Sources */,
+				31C41F2F29A3172C008F149D /* LoginViewModelTest.swift in Sources */,
+				31C41F2629A31158008F149D /* BaseNaviViewSnapshotTest.swift in Sources */,
 				31C675FC29A26CBB0059A0F5 /* WelcomeViewSnapshotTest.swift in Sources */,
 				31C41F0F29A30716008F149D /* AuthRepositoryProtocol+Extension.swift in Sources */,
 			);

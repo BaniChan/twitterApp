@@ -8,7 +8,6 @@
 import SnapshotTesting
 import XCTest
 import Resolver
-import FirebaseAuth
 
 @testable import TwiterApp
 

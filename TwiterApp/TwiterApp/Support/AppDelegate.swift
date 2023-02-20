@@ -24,6 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: frame)
         let navi = BaseNaviViewController(viewModel: BaseNaviViewModel())
         if Self.inUnitTest {
+            // use empty view controller for testing to prevent init injection not found issue
             window!.rootViewController = UIViewController()
         } else {
             window!.rootViewController = navi

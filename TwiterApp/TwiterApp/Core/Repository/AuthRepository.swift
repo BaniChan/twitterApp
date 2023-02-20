@@ -16,8 +16,8 @@ protocol AuthRepositoryProtocol {
         displayName: String,
         email: String,
         password: String,
-        completion: ((AuthDataResult?, Error?) -> Void)?)
-    func login(email: String, password: String, completion: ((AuthDataResult?, Error?) -> Void)?)
+        completion: ((Bool, Error?) -> Void)?)
+    func login(email: String, password: String, completion: ((Bool, Error?) -> Void)?)
     func logout() throws
 }
 
@@ -40,17 +40,19 @@ class AuthRepository: AuthRepositoryProtocol {
         displayName: String,
         email: String,
         password: String,
-        completion: ((AuthDataResult?, Error?) -> Void)?) {
+        completion: ((Bool, Error?) -> Void)?) {
             authService.createUser(
                 email: email,
                 password: password) { [weak self] result, error in
                 self?.setDisplayName(displayName)
-                completion?(result, error)
+                completion?(result != nil, error)
             }
     }
     
-    func login(email: String, password: String, completion: ((AuthDataResult?, Error?) -> Void)?) {
-        authService.login(email: email, password: password, completion: completion)
+    func login(email: String, password: String, completion: ((Bool, Error?) -> Void)?) {
+        authService.login(email: email, password: password) { result, error in
+            completion?(result != nil, error)
+        }
     }
     
     func logout() throws {
